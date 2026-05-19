@@ -31,7 +31,7 @@ export default function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg sm:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
           SEO &bull; AI / GEO &bull; Google Ads &bull; Meta Ads &bull; Websites
           &bull; Mobile Apps
         </p>
@@ -61,7 +61,7 @@ export default function Hero() {
         </div>
 
         {/* Contact strip */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-gray-500">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-slate-500">
           <a
             href="tel:+919989437777"
             className="flex items-center gap-2 hover:text-white transition-colors"
@@ -84,7 +84,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0B0F19] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0A0F1E] to-transparent" />
     </section>
   );
 }

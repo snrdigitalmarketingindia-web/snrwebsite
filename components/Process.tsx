@@ -23,7 +23,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-24 px-6 bg-[#0B0F19]">
+    <section className="py-24 px-6 bg-[#0A0F1E]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -33,7 +33,7 @@ export default function Process() {
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
             Our Simple Process
           </h2>
-          <p className="text-gray-400 mt-4 text-lg max-w-xl mx-auto">
+          <p className="text-slate-400 mt-4 text-lg max-w-xl mx-auto">
             From first call to measurable growth — here&apos;s how we work.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function Process() {
                   <span className="text-2xl font-bold text-blue-400">{step.number}</span>
                 </div>
                 <h3 className="text-lg font-semibold text-white">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed max-w-[200px]">
+                <p className="text-slate-400 text-sm leading-relaxed max-w-[200px]">
                   {step.description}
                 </p>
               </div>

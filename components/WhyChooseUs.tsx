@@ -39,7 +39,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 px-6 bg-[#111827]">
+    <section className="py-24 px-6 bg-[#111C35]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
             Why Businesses Choose Us
           </h2>
-          <p className="text-gray-400 mt-4 text-lg max-w-xl mx-auto">
+          <p className="text-slate-400 mt-4 text-lg max-w-xl mx-auto">
             We don&apos;t just run campaigns. We build growth engines for your business.
           </p>
         </div>
@@ -59,13 +59,13 @@ export default function WhyChooseUs() {
           {reasons.map((r) => (
             <div
               key={r.title}
-              className="bg-[#0B0F19] rounded-2xl p-8 border border-white/[0.07] flex flex-col items-center text-center gap-4 card-hover"
+              className="bg-[#0A0F1E] rounded-2xl p-8 border border-white/[0.07] flex flex-col items-center text-center gap-4 card-hover"
             >
               <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400">
                 {r.icon}
               </div>
               <h3 className="text-lg font-semibold text-white">{r.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{r.description}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">{r.description}</p>
             </div>
           ))}
         </div>

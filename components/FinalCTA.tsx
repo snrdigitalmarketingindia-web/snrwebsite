@@ -2,7 +2,7 @@ export default function FinalCTA() {
   return (
     <section className="relative py-28 px-6 overflow-hidden">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-[#111827]" />
+      <div className="absolute inset-0 bg-[#111C35]" />
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-green-500/5" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-blue-600/8 blur-[80px] pointer-events-none" />
 
@@ -13,7 +13,7 @@ export default function FinalCTA() {
         <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-5">
           Ready to Grow Your Business?
         </h2>
-        <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+        <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
           We help you get more customers online through SEO, Ads and Digital
           Marketing. Talk to us — it&apos;s free.
         </p>
@@ -44,7 +44,7 @@ export default function FinalCTA() {
         </div>
 
         {/* Contact info */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-slate-500">
           <a
             href="tel:+919989437777"
             className="flex items-center gap-2 hover:text-white transition-colors"

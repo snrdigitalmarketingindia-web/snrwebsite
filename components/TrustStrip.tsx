@@ -43,16 +43,16 @@ const services = [
 
 export default function TrustStrip() {
   return (
-    <section className="bg-[#111827] py-12 px-6 border-y border-white/[0.06]">
+    <section className="bg-[#111C35] py-12 px-6 border-y border-white/[0.06]">
       <div className="max-w-5xl mx-auto text-center">
-        <p className="text-gray-400 text-sm font-medium uppercase tracking-widest mb-8">
+        <p className="text-slate-400 text-sm font-medium uppercase tracking-widest mb-8">
           Helping Businesses Grow Across India
         </p>
         <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
           {services.map((s) => (
             <div
               key={s.label}
-              className="flex items-center gap-2 text-gray-300 text-sm font-medium"
+              className="flex items-center gap-2 text-slate-300 text-sm font-medium"
             >
               <span className="text-blue-400">{s.icon}</span>
               {s.label}
