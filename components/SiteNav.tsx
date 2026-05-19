@@ -47,6 +47,18 @@ export default function SiteNav() {
             <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
             Campaigns
           </Link>
+          <Link
+            href="/onboarding"
+            className="text-slate-400 hover:text-white text-sm px-3 py-1.5 rounded-lg hover:bg-white/[0.05] transition-colors"
+          >
+            Agencies
+          </Link>
+          <Link
+            href="/super-admin"
+            className="text-slate-400 hover:text-white text-sm px-3 py-1.5 rounded-lg hover:bg-red-500/10 border border-transparent hover:border-red-500/20 transition-colors"
+          >
+            ⚙ Admin
+          </Link>
         </div>
 
         <a

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/components/AuthProvider";
+import { TenantProvider } from "@/components/TenantProvider";
 import SiteNav from "@/components/SiteNav";
 
 const geist = Geist({
@@ -34,8 +35,10 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable}`}>
       <body className="min-h-screen antialiased">
           <AuthProvider>
-            <SiteNav />
-            {children}
+            <TenantProvider>
+              <SiteNav />
+              {children}
+            </TenantProvider>
           </AuthProvider>
         </body>
     </html>
