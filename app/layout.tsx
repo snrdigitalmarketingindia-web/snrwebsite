@@ -8,15 +8,15 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "SNR Digital Marketing — Get More Customers Online | Hyderabad",
+  title: "SNR Digital Marketing — Get More Customers Online in India",
   description:
-    "SNR Digital Marketing helps Indian businesses get more customers through SEO, Google Ads, Meta Ads, Websites & Mobile Apps. Free consultation available. Call +91 9989437777.",
+    "SNR Digital Marketing helps Indian businesses get more customers through SEO, Google Ads, Meta Ads & Websites. Get a Free Business Growth Audit. Call +91 9989437777. Hyderabad.",
   keywords:
-    "digital marketing hyderabad, SEO india, google ads agency hyderabad, meta ads india, website design hyderabad, lead generation india, digital marketing agency india",
+    "digital marketing hyderabad, get more customers online india, SEO agency india, google ads hyderabad, meta ads india, lead generation india, digital marketing agency hyderabad, business growth india",
   openGraph: {
-    title: "SNR Digital Marketing — Get More Customers Online",
+    title: "SNR Digital Marketing — Get More Customers Online in India",
     description:
-      "Get more leads, enquiries and customers with SNR Digital Marketing. SEO, Google Ads, Meta Ads, Websites & More. Based in Hyderabad, serving all of India.",
+      "Struggling to get customers online? We help Indian businesses generate daily enquiries through SEO, Google Ads, Meta Ads & Websites. Free Business Growth Audit available.",
     siteName: "SNR Digital Marketing",
     locale: "en_IN",
     type: "website",

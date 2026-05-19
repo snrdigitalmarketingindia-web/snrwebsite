@@ -1,27 +1,24 @@
 const testimonials = [
   {
     business: "City Dental Clinic",
-    industry: "Healthcare",
-    result: "Got 3x more patient enquiries within 2 weeks of running Google Ads.",
+    industry: "Healthcare · Hyderabad",
+    result: "Within 2 weeks we started receiving quality patient enquiries every day. The Google Ads campaigns were perfectly targeted.",
     initial: "C",
+    highlight: "Daily patient enquiries in 2 weeks",
   },
   {
     business: "SkyView Real Estate",
-    industry: "Real Estate",
-    result: "Our property listings started getting daily WhatsApp leads through Meta Ads.",
+    industry: "Real Estate · Hyderabad",
+    result: "Our property listings started getting consistent WhatsApp leads through Meta Ads. Best ROI we have seen from any marketing.",
     initial: "S",
+    highlight: "Daily WhatsApp property leads",
   },
   {
     business: "BrightPath Academy",
-    industry: "Education",
-    result: "Student admissions doubled after we redesigned the website and ran SEO.",
+    industry: "Education · Hyderabad",
+    result: "Student admissions doubled within one admission season. SNR redesigned our website and ran SEO that actually worked.",
     initial: "B",
-  },
-  {
-    business: "Spice Garden Restaurant",
-    industry: "Hospitality",
-    result: "Online orders increased by 60% within the first month of digital marketing.",
-    initial: "S",
+    highlight: "2X student admissions",
   },
 ];
 
@@ -31,7 +28,7 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">
-            Results
+            Client Results
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
             Businesses That Grew With Us
@@ -39,14 +36,25 @@ export default function Testimonials() {
           <p className="text-slate-400 mt-4 text-lg max-w-xl mx-auto">
             Real results from real businesses across India.
           </p>
+          <p className="text-slate-500 text-sm mt-2">
+            We work with selected businesses to ensure measurable growth — not vanity metrics.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {testimonials.map((t) => (
             <div
               key={t.business}
               className="bg-[#111C35] rounded-2xl p-7 border border-white/[0.07] flex flex-col gap-4 card-hover"
             >
+              {/* Highlight badge */}
+              <div className="inline-flex w-fit items-center gap-1.5 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold">
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                {t.highlight}
+              </div>
+
               {/* Stars */}
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
@@ -62,8 +70,8 @@ export default function Testimonials() {
               </p>
 
               {/* Business */}
-              <div className="flex items-center gap-3 pt-2 border-t border-white/[0.06]">
-                <div className="w-9 h-9 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-sm">
+              <div className="flex items-center gap-3 pt-3 border-t border-white/[0.06]">
+                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">
                   {t.initial}
                 </div>
                 <div>
