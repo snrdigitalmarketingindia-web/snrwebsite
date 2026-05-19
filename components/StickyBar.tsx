@@ -6,7 +6,7 @@ export default function StickyBar() {
   if (dismissed) return null;
 
   return (
-    <div className="sticky-bar-enter fixed top-0 left-0 right-0 z-50 bg-[#0D1528] border-b border-blue-500/20 shadow-lg">
+    <div className="sticky-bar-enter sticky top-0 left-0 right-0 z-50 bg-[#0D1528] border-b border-blue-500/20 shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
         {/* Left message */}
         <p className="text-slate-300 text-xs sm:text-sm font-medium hidden sm:block">

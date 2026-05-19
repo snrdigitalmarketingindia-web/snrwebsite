@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteNav from "@/components/SiteNav";
 import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -18,8 +17,6 @@ export default function BlogIndex() {
 
   return (
     <>
-      <SiteNav />
-
       <section className="py-24 px-6 bg-[#0A0F1E]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">

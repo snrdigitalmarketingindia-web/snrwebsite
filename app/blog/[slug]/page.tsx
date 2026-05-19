@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import SiteNav from "@/components/SiteNav";
 import FAQSection from "@/components/FAQSection";
 import PageCTA from "@/components/PageCTA";
 import Footer from "@/components/Footer";
@@ -57,8 +56,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(post.schema) }}
       />
-      <SiteNav />
-
       {/* Article header */}
       <article className="py-20 px-6 bg-[#0A0F1E]">
         <div className="max-w-3xl mx-auto">
