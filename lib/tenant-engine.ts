@@ -24,21 +24,21 @@ export type PlanConfig = {
 
 export const PLANS: Record<PlanId, PlanConfig> = {
   starter: {
-    id: "starter", name: "Starter", price: "₹2,999/mo", priceMonthly: 2999,
+    id: "starter", name: "Starter", price: "₹8,999/mo", priceMonthly: 8999,
     leadLimit: 100, clientLimit: 3, campaignLimit: 5,
     aiScoring: false, whiteLabel: false, customDomain: false, prioritySupport: false,
     features: ["Up to 100 leads/mo", "3 client accounts", "5 AI campaigns", "Basic CRM", "CSV export"],
     color: "#64748B", badge: "bg-slate-500/15 text-slate-300 border-slate-500/30",
   },
   growth: {
-    id: "growth", name: "Growth", price: "₹7,999/mo", priceMonthly: 7999,
+    id: "growth", name: "Growth", price: "₹15,999/mo", priceMonthly: 15999,
     leadLimit: 500, clientLimit: 15, campaignLimit: 25,
     aiScoring: true, whiteLabel: true, customDomain: false, prioritySupport: false,
     features: ["Up to 500 leads/mo", "15 client accounts", "25 AI campaigns", "AI lead scoring", "White-label branding", "Advanced analytics"],
     color: "#3B82F6", badge: "bg-blue-500/15 text-blue-300 border-blue-500/30",
   },
   pro: {
-    id: "pro", name: "Pro Agency", price: "₹19,999/mo", priceMonthly: 19999,
+    id: "pro", name: "Pro Agency", price: "₹24,999/mo", priceMonthly: 24999,
     leadLimit: 9999, clientLimit: 9999, campaignLimit: 9999,
     aiScoring: true, whiteLabel: true, customDomain: true, prioritySupport: true,
     features: ["Unlimited leads", "Unlimited clients", "Unlimited AI campaigns", "Custom domain support", "Priority support", "API access", "Team accounts"],
