@@ -40,6 +40,13 @@ export default function SiteNav() {
             <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
             Dashboard
           </Link>
+          <Link
+            href="/campaigns"
+            className="text-slate-400 hover:text-white text-sm px-3 py-1.5 rounded-lg hover:bg-white/[0.05] transition-colors flex items-center gap-1.5"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+            Campaigns
+          </Link>
         </div>
 
         <a
