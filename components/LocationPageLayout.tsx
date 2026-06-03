@@ -9,7 +9,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "name": "SNR Digital Marketing",
   "description": "Digital marketing agency in Hyderabad offering SEO, Google Ads, Meta Ads, and website development services.",
-  "url": "https://snrdigitalmarketingindia-web.github.io/snrwebsite",
+  "url": "https://snrdigitalmarketing.com",
   "telephone": "+91-9989437777",
   "address": {
     "@type": "PostalAddress",

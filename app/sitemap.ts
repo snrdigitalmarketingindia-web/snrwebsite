@@ -4,7 +4,7 @@ import { blogPosts } from "@/lib/blog-data";
 
 export const dynamic = "force-static";
 
-const BASE = "https://snrdigitalmarketingindia-web.github.io/snrwebsite";
+const BASE = "https://snrdigitalmarketing.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

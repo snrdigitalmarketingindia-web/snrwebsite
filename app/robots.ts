@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/admin", "/admin/"],
     },
-    sitemap: "https://snrdigitalmarketingindia-web.github.io/snrwebsite/sitemap.xml",
+    sitemap: "https://snrdigitalmarketing.com/sitemap.xml",
   };
 }
