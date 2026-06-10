@@ -10,7 +10,7 @@ const localBusinessSchema = {
   "name": "SNR Digital Marketing",
   "description": "Digital marketing agency in Hyderabad offering SEO, Google Ads, Meta Ads, and website development services.",
   "url": "https://snrdigitalmarketing.com",
-  "telephone": "+91-9989437777",
+  "email": "snrdigitalmarketingindia@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Hyderabad",
@@ -45,18 +45,22 @@ export default function LocationPageLayout({ page }: { page: LocationPage }) {
           <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-8">{page.hero.subheading}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={`https://wa.me/919989437777?text=Hi%2C%20I%20want%20${encodeURIComponent(page.service)}%20services%20in%20${encodeURIComponent(page.city)}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:snrdigitalmarketingindia@gmail.com?subject=${encodeURIComponent(`Enquiry: ${page.service} in ${page.city}`)}&body=Hi%20SNR%20Digital%20Marketing%2C%0A%0AI%20want%20${encodeURIComponent(page.service)}%20services%20in%20${encodeURIComponent(page.city)}.%0A%0AName%3A%0ABusiness%3A%0AGoal%3A`}
               className="btn-green px-10 py-4 rounded-xl font-bold text-base inline-flex items-center gap-2 shadow-xl"
             >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
               Get Free Consultation
             </a>
             <a
-              href="tel:+919989437777"
+              href="mailto:snrdigitalmarketingindia@gmail.com?subject=Quick%20Enquiry&body=Hi%20SNR%2C%0A%0AI%20have%20a%20quick%20question."
               className="btn-blue-outline px-8 py-4 rounded-xl font-semibold text-base inline-flex items-center gap-2"
             >
-              Call: +91 99894 37777
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              Email Us
             </a>
           </div>
         </div>
@@ -98,7 +102,7 @@ export default function LocationPageLayout({ page }: { page: LocationPage }) {
       <FAQSection faqs={page.faqs} />
       <PageCTA
         heading={`Ready to Grow Your Business in ${page.city}?`}
-        waText={encodeURIComponent(`Hi, I want ${page.service} services in ${page.city}`)}
+        subject={encodeURIComponent(`Enquiry: ${page.service} in ${page.city}`)}
       />
       <Footer />
       <FloatingWhatsApp />

@@ -69,9 +69,7 @@ export default function SiteNav() {
         </div>
 
         <a
-          href="https://wa.me/919989437777?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20online"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="mailto:snrdigitalmarketingindia@gmail.com?subject=Free%20Growth%20Audit%20Request&body=Hi%20SNR%20Digital%20Marketing%2C%0A%0AI%20would%20like%20a%20free%20growth%20audit%20for%20my%20business.%0A%0AName%3A%0ABusiness%3A%0AGoal%3A"
           className="btn-green px-5 py-2.5 rounded-xl font-semibold text-sm flex-shrink-0"
         >
           Free Audit

@@ -417,7 +417,7 @@ function exportPDF(client: MockClient) {
   </div>
 
   <div class="footer">
-    <p>SNR Digital Marketing &bull; Hyderabad, India &bull; +91 99894 37777 &bull; snrdigitalmarketing.com</p>
+    <p>SNR Digital Marketing &bull; Hyderabad, India &bull; snrdigitalmarketingindia@gmail.com &bull; snrdigitalmarketing.com</p>
     <p style="margin-top:4px">This report is confidential and prepared exclusively for ${client.name}. All data sourced from campaign analytics.</p>
   </div>
 </body>

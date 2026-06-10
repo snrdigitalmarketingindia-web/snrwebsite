@@ -13,7 +13,7 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "SNR Digital Marketing — Get More Customers Online in India",
   description:
-    "SNR Digital Marketing helps Indian businesses get more customers through SEO, Google Ads, Meta Ads & Websites. Get a Free Business Growth Audit. Call +91 9989437777. Hyderabad.",
+    "SNR Digital Marketing helps Indian businesses get more customers through SEO, Google Ads, Meta Ads & Websites. Get a Free Business Growth Audit. Based in Hyderabad.",
   keywords:
     "digital marketing hyderabad, get more customers online india, SEO agency india, google ads hyderabad, meta ads india, lead generation india, digital marketing agency hyderabad, business growth india",
   openGraph: {
