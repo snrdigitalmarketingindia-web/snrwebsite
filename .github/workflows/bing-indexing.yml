@@ -2,32 +2,33 @@ name: Bing URL Indexing
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
-      - "**/*.html"
-      - "**/sitemap.xml"
-      - "app/**/*.tsx"
-      - "app/**/*.ts"
-  workflow_dispatch:          # allow manual trigger from GitHub UI
-  schedule:
-    - cron: "0 3 * * *"       # daily at 3 AM UTC (~8:30 AM IST)
+      - '**.html'
+      - 'public/sitemap.xml'
+      - 'app/**/*.tsx'
+      - 'app/**/*.ts'
+  workflow_dispatch:   # allow manual trigger from GitHub Actions UI
 
 jobs:
-  submit-to-bing:
+  bing-submit:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install dependencies
         run: pip install -r bing-indexing/requirements.txt
 
-      - name: Submit URLs to Bing
+      - name: Submit URLs to Bing + IndexNow
         env:
           BING_API_KEY: ${{ secrets.BING_API_KEY }}
           SITE_URL: "https://www.snrdigitalmarketing.com"

@@ -1,32 +1,41 @@
 """
-Bing Webmaster API — URL Batch Submitter
-Reads sitemap.xml, prioritises today's lastmod pages, caps at 100 URLs/day.
-API docs: https://learn.microsoft.com/en-us/dotnet/api/microsoft.bing.webmaster.api
+URL Indexing — SNR Digital Marketing (snrdigitalmarketing.com)
+--------------------------------------------------------------
+Submits URLs via TWO channels on every push:
+
+  1. IndexNow  → notifies Bing, Yandex, Seznam, Naver in one call (no auth needed)
+  2. Bing Webmaster API → direct Bing submission (requires BING_API_KEY secret)
+
+Fetches the live sitemap, prioritises pages with today's <lastmod>,
+then submits up to 100 URLs per run.
 """
 
 import os
 import sys
 import xml.etree.ElementTree as ET
-from datetime import date, datetime, timezone
+from datetime import date
 import requests
 
 # ── Config ────────────────────────────────────────────────────────────────────
-BING_API_KEY  = os.environ.get("BING_API_KEY", "")
-SITEMAP_URL   = os.environ.get("SITEMAP_URL", "https://www.snrdigitalmarketing.com/sitemap.xml")
-SITE_URL      = os.environ.get("SITE_URL",    "https://www.snrdigitalmarketing.com")
-DAILY_LIMIT   = 100          # Bing free quota
-BATCH_SIZE    = 100          # max per API call
-BING_ENDPOINT = (
-    "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch"
-    f"?apikey={BING_API_KEY}"
-)
+SITE_URL     = os.environ.get("SITE_URL",    "https://www.snrdigitalmarketing.com")
+SITE_HOST    = "www.snrdigitalmarketing.com"
+SITEMAP_URL  = os.environ.get("SITEMAP_URL", "https://www.snrdigitalmarketing.com/sitemap.xml")
+DAILY_QUOTA  = 100
 
-# ── Sitemap helpers ───────────────────────────────────────────────────────────
+# IndexNow — covers Bing, Yandex, Seznam, Naver
+INDEXNOW_KEY      = "49e653a96cdf37606071c4e6d37645d3"
+INDEXNOW_URL      = "https://api.indexnow.org/indexnow"
+INDEXNOW_KEY_LOC  = f"https://{SITE_HOST}/{INDEXNOW_KEY}.txt"
+
+# Bing Webmaster API (direct)
+BING_API_URL = "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch"
+# ─────────────────────────────────────────────────────────────────────────────
 
 NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 
+
 def fetch_sitemap(url: str) -> list[dict]:
-    """Fetch sitemap XML and return list of {url, lastmod}."""
+    """Fetch sitemap XML (handles sitemap index) and return list of {url, lastmod, priority}."""
     print(f"Fetching sitemap: {url}")
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
@@ -42,98 +51,106 @@ def fetch_sitemap(url: str) -> list[dict]:
 
     # Handle regular urlset
     for url_el in root.findall("sm:url", NS):
-        loc     = url_el.findtext("sm:loc",     namespaces=NS)
-        lastmod = url_el.findtext("sm:lastmod", namespaces=NS)
+        loc      = url_el.findtext("sm:loc",      namespaces=NS) or ""
+        lastmod  = url_el.findtext("sm:lastmod",  namespaces=NS) or ""
+        priority = url_el.findtext("sm:priority", namespaces=NS) or "0.5"
         if loc:
-            urls.append({"url": loc, "lastmod": lastmod or ""})
+            urls.append({"url": loc, "lastmod": lastmod, "priority": float(priority)})
 
     return urls
 
 
-def prioritise(entries: list[dict]) -> list[str]:
-    """Sort: today's lastmod first, then newest-to-oldest, then rest."""
-    today = date.today().isoformat()
-
-    def sort_key(e: dict):
-        lm = e["lastmod"][:10] if e["lastmod"] else ""
-        if lm == today:
-            return (0, lm)
-        elif lm:
-            return (1, lm)
-        return (2, "")
-
-    sorted_entries = sorted(entries, key=sort_key, reverse=False)
-    # Reverse within groups so newest non-today comes first
-    today_urls = [e["url"] for e in sorted_entries if (e["lastmod"] or "")[:10] == today]
-    dated_urls = [e["url"] for e in sorted_entries
-                  if (e["lastmod"] or "")[:10] not in ("", today)]
-    dated_urls.sort(key=lambda e: next(
-        (x["lastmod"] for x in sorted_entries if x["url"] == e), ""), reverse=True)
-    no_date    = [e["url"] for e in sorted_entries if not e["lastmod"]]
-
-    return (today_urls + dated_urls + no_date)[:DAILY_LIMIT]
+def prioritise(urls: list[dict]) -> list[str]:
+    """
+    Sort order:
+      1. Pages whose lastmod == today  (freshest first, by priority desc)
+      2. All others by priority desc, then lastmod desc, then alphabetical
+    Returns plain URL strings, capped at DAILY_QUOTA.
+    """
+    today_str = date.today().isoformat()
+    today  = [u for u in urls if u["lastmod"][:10] == today_str]
+    rest   = [u for u in urls if u["lastmod"][:10] != today_str]
+    today.sort(key=lambda u: (-u["priority"], u["url"]))
+    rest.sort( key=lambda u: (-u["priority"], u["lastmod"], u["url"]))
+    ordered = today + rest
+    return [u["url"] for u in ordered[:DAILY_QUOTA]]
 
 
-# ── Bing submission ───────────────────────────────────────────────────────────
-
-def submit_batch(urls: list[str]) -> dict:
+def submit_indexnow(urls: list[str]) -> bool:
+    """
+    POST to IndexNow — notifies Bing, Yandex, Seznam, Naver simultaneously.
+    Returns True on success.
+    """
     payload = {
-        "siteUrl":  SITE_URL,
-        "urlList":  urls,
+        "host":        SITE_HOST,
+        "key":         INDEXNOW_KEY,
+        "keyLocation": INDEXNOW_KEY_LOC,
+        "urlList":     urls,
     }
     headers = {"Content-Type": "application/json; charset=utf-8"}
-    resp = requests.post(BING_ENDPOINT, json=payload, headers=headers, timeout=30)
-    resp.raise_for_status()
-    return resp.json()
+    print(f"\n📡 IndexNow — submitting {len(urls)} URL(s) to Bing + Yandex + more …")
+    resp = requests.post(INDEXNOW_URL, json=payload, headers=headers, timeout=30)
+
+    # IndexNow returns 200 or 202 on success
+    if resp.status_code in (200, 202):
+        print(f"✅  IndexNow accepted {len(urls)} URL(s)  [HTTP {resp.status_code}]")
+        print(f"   Engines notified: Bing, Yandex, Seznam, Naver")
+        return True
+    else:
+        print(f"⚠️  IndexNow HTTP {resp.status_code}: {resp.text}", file=sys.stderr)
+        return False
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+def submit_bing(api_key: str, urls: list[str]) -> bool:
+    """
+    POST directly to Bing Webmaster API.
+    Returns True on success.
+    """
+    payload = {"siteUrl": SITE_URL, "urlList": urls}
+    params  = {"apikey": api_key}
+    headers = {"Content-Type": "application/json; charset=utf-8"}
+
+    print(f"\n🔵 Bing Webmaster API — submitting {len(urls)} URL(s) …")
+    resp = requests.post(BING_API_URL, json=payload, params=params, headers=headers, timeout=30)
+
+    if resp.status_code == 200:
+        d = resp.json().get("d")
+        if d and d.get("ErrorCode", 0) != 0:
+            print(f"⚠️  Bing API error: {d}", file=sys.stderr)
+            return False
+        print(f"✅  Bing API accepted {len(urls)} URL(s).")
+        return True
+    else:
+        print(f"⚠️  Bing API HTTP {resp.status_code}: {resp.text}", file=sys.stderr)
+        return False
+
 
 def main():
-    if not BING_API_KEY:
-        print("ERROR: BING_API_KEY environment variable is not set.")
-        sys.exit(1)
-
     print(f"Site : {SITE_URL}")
     print(f"Date : {date.today().isoformat()}")
-    print()
 
-    # Fetch + prioritise
-    entries    = fetch_sitemap(SITEMAP_URL)
-    print(f"Found {len(entries)} URLs in sitemap.")
+    urls     = fetch_sitemap(SITEMAP_URL)
+    to_send  = prioritise(urls)
+    print(f"Sitemap: {len(urls)} URLs → sending {len(to_send)} (quota={DAILY_QUOTA})")
 
-    priority_urls = prioritise(entries)
-    print(f"Submitting {len(priority_urls)} URLs (capped at {DAILY_LIMIT}/day).")
-    print()
+    success = True
 
-    # Submit in batches
-    submitted = 0
-    errors    = 0
+    # 1. IndexNow (Bing + Yandex + more) — always runs, no secret needed
+    success &= submit_indexnow(to_send)
 
-    for i in range(0, len(priority_urls), BATCH_SIZE):
-        batch = priority_urls[i : i + BATCH_SIZE]
-        try:
-            result = submit_batch(batch)
-            d = result.get("d", {})
-            err = d.get("ErrorCode", 0) if isinstance(d, dict) else 0
-            if err == 0:
-                print(f"  Batch {i//BATCH_SIZE + 1}: ✅ {len(batch)} URLs submitted successfully.")
-                submitted += len(batch)
-            else:
-                print(f"  Batch {i//BATCH_SIZE + 1}: ⚠️  API error code {err} — {d}")
-                errors += len(batch)
-        except requests.HTTPError as e:
-            print(f"  Batch {i//BATCH_SIZE + 1}: ❌ HTTP {e.response.status_code} — {e.response.text[:200]}")
-            errors += len(batch)
-        except Exception as e:
-            print(f"  Batch {i//BATCH_SIZE + 1}: ❌ Unexpected error — {e}")
-            errors += len(batch)
+    # 2. Bing direct API — runs only if BING_API_KEY is set
+    bing_key = os.environ.get("BING_API_KEY", "").strip()
+    if bing_key:
+        success &= submit_bing(bing_key, to_send)
+    else:
+        print("\n⚠️  BING_API_KEY not set — skipping Bing direct submission.")
 
-    print()
-    print(f"Done. Submitted: {submitted} | Errors: {errors}")
-
-    if errors > 0:
+    if not success:
         sys.exit(1)
+
+    print(f"\n🎉 Done — {len(to_send)} URLs submitted to all engines.")
+    for u in to_send:
+        print(f"   → {u}")
 
 
 if __name__ == "__main__":
