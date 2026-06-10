@@ -1,0 +1,35 @@
+name: Bing URL Indexing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "**/sitemap.xml"
+      - "app/**/*.tsx"
+      - "app/**/*.ts"
+  workflow_dispatch:          # allow manual trigger from GitHub UI
+  schedule:
+    - cron: "0 3 * * *"       # daily at 3 AM UTC (~8:30 AM IST)
+
+jobs:
+  submit-to-bing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r bing-indexing/requirements.txt
+
+      - name: Submit URLs to Bing
+        env:
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
+          SITE_URL: "https://www.snrdigitalmarketing.com"
+          SITEMAP_URL: "https://www.snrdigitalmarketing.com/sitemap.xml"
+        run: python bing-indexing/submit_sitemap_urls.py
