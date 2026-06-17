@@ -1,7 +1,12 @@
 "use client";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { trackFormStep, trackFormSubmit } from "@/lib/analytics";
 import { saveLeadAsync } from "@/lib/supabase/leads";
+
+const EJS_SERVICE  = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID  ?? "";
+const EJS_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
+const EJS_KEY      = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY  ?? "";
 
 const businessTypes = [
   { value: "Hospital / Clinic", icon: "🏥" },
@@ -53,14 +58,30 @@ export default function SmartLeadForm() {
 
     trackFormSubmit(businessType, goal);
 
-    // Open email client pre-filled with lead details
-    const subject = encodeURIComponent("New Lead: Free Growth Audit Request");
-    const body = encodeURIComponent(
-      `Hi SNR Digital Marketing,\n\nNew lead from the website growth audit form.\n\n` +
-      `Business Type: ${businessType}\nGoal: ${goal}\nBudget: ${budget}\n` +
-      `Name: ${name.trim()}\nPhone: ${phone.trim()}\n\nPlease contact me for a free growth audit.`
-    );
-    window.open(`mailto:snrdigitalmarketingindia@gmail.com?subject=${subject}&body=${body}`, "_blank");
+    // Send email via EmailJS — no server needed, fires silently
+    try {
+      await emailjs.send(
+        EJS_SERVICE,
+        EJS_TEMPLATE,
+        {
+          from_name:     name.trim(),
+          from_phone:    phone.trim(),
+          business_type: businessType,
+          goal,
+          budget,
+          reply_to:      "snrdigitalmarketingindia@gmail.com",
+        },
+        EJS_KEY
+      );
+    } catch {
+      // EmailJS failed — fall back to opening email client
+      const subject = encodeURIComponent("New Lead: Free Growth Audit Request");
+      const body    = encodeURIComponent(
+        `New lead from the website.\n\nBusiness: ${businessType}\nGoal: ${goal}\nBudget: ${budget}\nName: ${name.trim()}\nPhone: ${phone.trim()}`
+      );
+      window.open(`mailto:snrdigitalmarketingindia@gmail.com?subject=${subject}&body=${body}`, "_blank");
+    }
+
     setSaving(false);
     setStep("done");
   }
@@ -218,13 +239,13 @@ export default function SmartLeadForm() {
               We have received your details. Our growth expert will analyse your business and contact you within{" "}
               <span className="text-white font-medium">24 hours</span>.
             </p>
-            <p className="text-blue-400/80 text-sm font-medium">
-              ✉️ Email not opened? &nbsp;
+            <p className="text-slate-500 text-sm">
+              Didn&apos;t hear back? Email us at{" "}
               <a
-                href={`mailto:snrdigitalmarketingindia@gmail.com?subject=${encodeURIComponent("Free Growth Audit Request")}&body=${encodeURIComponent(`Hi SNR Digital Marketing,\n\nBusiness: ${businessType}\nGoal: ${goal}\nBudget: ${budget}\nName: ${name}\nPhone: ${phone}`)}`}
-                className="underline text-blue-400 hover:text-blue-300"
+                href="mailto:snrdigitalmarketingindia@gmail.com"
+                className="text-blue-400 hover:text-blue-300 underline"
               >
-                Click here to send via email
+                snrdigitalmarketingindia@gmail.com
               </a>
             </p>
           </div>
