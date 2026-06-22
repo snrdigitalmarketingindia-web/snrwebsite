@@ -5,6 +5,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { blogPosts } from "@/lib/blog-data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.snrdigitalmarketing.com/blog" },
   title: "Digital Marketing Blog — SEO, Google Ads & Growth Tips | SNR Digital Marketing",
   description:
     "Expert insights on SEO, Google Ads, Meta Ads, and digital marketing for Indian businesses. Updated monthly by SNR Digital Marketing, Hyderabad.",

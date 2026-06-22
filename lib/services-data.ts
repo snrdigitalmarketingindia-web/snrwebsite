@@ -359,7 +359,7 @@ export const locationPages: LocationPage[] = [
       "Hyderabad's digital economy is booming — and competition for top Google rankings is fierce. Whether you run a hospital in Banjara Hills, a real estate agency in Gachibowli, or a coaching institute in Ameerpet, our Hyderabad SEO services help you outrank competitors and capture high-intent local search traffic.",
     whyUs: [
       { title: "Deep Hyderabad Market Knowledge", desc: "We understand the local competitive landscape across all major Hyderabad neighbourhoods — Hitech City, Banjara Hills, Jubilee Hills, Ameerpet, and more." },
-      { title: "Teluglu & English SEO", desc: "We optimise for both English and regional search queries to capture the full Hyderabad and Telangana audience." },
+      { title: "Telugu & English SEO", desc: "We optimise for both English and regional search queries to capture the full Hyderabad and Telangana audience." },
       { title: "Results in 90 Days", desc: "Our Hyderabad clients see measurable ranking improvements within 60–90 days with our proven local SEO framework." },
       { title: "Transparent Reporting", desc: "Monthly ranking reports with keyword positions, traffic data, and leads generated — no fluff, just results." },
     ],

@@ -6,16 +6,30 @@ import type { LocationPage } from "@/lib/services-data";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "name": "SNR Digital Marketing",
-  "description": "Digital marketing agency in Hyderabad offering SEO, Google Ads, Meta Ads, and website development services.",
-  "url": "https://snrdigitalmarketing.com",
+  "description": "Digital marketing agency in Hyderabad offering SEO, Google Ads, Meta Ads, GEO, and website development services.",
+  "url": "https://www.snrdigitalmarketing.com",
+  "telephone": "+91-9989437777",
   "email": "snrdigitalmarketingindia@gmail.com",
+  "priceRange": "₹₹",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Hyderabad",
     "addressRegion": "Telangana",
+    "postalCode": "500001",
     "addressCountry": "IN",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "17.3850",
+    "longitude": "78.4867",
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "19:00",
   },
   "areaServed": ["Hyderabad", "Secunderabad", "Telangana", "India"],
   "sameAs": [
