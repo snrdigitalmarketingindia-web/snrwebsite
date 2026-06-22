@@ -2,10 +2,12 @@ import Link from "next/link";
 
 const services = [
   { label: "SEO Services",          href: "/seo-services" },
+  { label: "Local SEO Services",    href: "/local-seo-services" },
   { label: "Google Ads",            href: "/google-ads-management" },
   { label: "Meta Ads",              href: "/meta-ads-management" },
+  { label: "PPC Management",        href: "/ppc-management" },
+  { label: "Social Media Marketing",href: "/social-media-marketing" },
   { label: "Website Development",   href: "/website-development" },
-  { label: "Mobile App Dev",        href: "/mobile-app-development" },
   { label: "AI & GEO Optimization", href: "/ai-geo-optimization" },
 ];
 
@@ -13,6 +15,11 @@ const locations = [
   { label: "SEO Services Hyderabad",         href: "/seo-services-hyderabad" },
   { label: "Digital Marketing Hyderabad",    href: "/digital-marketing-hyderabad" },
   { label: "Google Ads Agency Hyderabad",    href: "/google-ads-agency-hyderabad" },
+  { label: "Meta Ads Agency Hyderabad",      href: "/meta-ads-agency-hyderabad" },
+  { label: "Website Dev Hyderabad",          href: "/website-development-hyderabad" },
+  { label: "SEO — Banjara Hills",            href: "/seo-services-banjara-hills" },
+  { label: "SEO — Gachibowli",              href: "/seo-services-gachibowli" },
+  { label: "SEO — HITECH City",             href: "/seo-services-hitech-city" },
   { label: "SEO Company India",              href: "/seo-company-india" },
 ];
 

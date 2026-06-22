@@ -4,13 +4,44 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import type { ServicePage } from "@/lib/services-data";
 
+const BASE = "https://www.snrdigitalmarketing.com";
+
 export default function ServicePageLayout({ page }: { page: ServicePage }) {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": BASE },
+      { "@type": "ListItem", "position": 2, "name": page.title, "item": `${BASE}/${page.slug}` },
+    ],
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `How ${page.title} Works — SNR Digital Marketing`,
+    "step": page.process.map((p) => ({
+      "@type": "HowToStep",
+      "position": p.step,
+      "name": p.title,
+      "text": p.desc,
+    })),
+  };
+
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": page.metaTitle,
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "h2"] },
+    "url": `${BASE}/${page.slug}`,
+  };
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(page.schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(page.schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       {/* Hero */}
       <section className="relative py-24 px-6 bg-[#0A0F1E] overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />

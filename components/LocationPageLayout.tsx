@@ -35,16 +35,28 @@ const localBusinessSchema = {
   "sameAs": [
     "https://www.facebook.com/snrdigitalmarketing",
     "https://www.instagram.com/snrdigitalmarketing",
+    "https://www.linkedin.com/company/snr-digital-marketing",
+    "https://clutch.co/profile/snr-digital-marketing",
+    "https://www.goodfirms.co/company/snr-digital-marketing",
   ],
 };
 
+const BASE = "https://www.snrdigitalmarketing.com";
+
 export default function LocationPageLayout({ page }: { page: LocationPage }) {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": BASE },
+      { "@type": "ListItem", "position": 2, "name": `${page.service} in ${page.city}`, "item": `${BASE}/${page.slug}` },
+    ],
+  };
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {/* Hero */}
       <section className="relative py-24 px-6 bg-[#0A0F1E] overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />

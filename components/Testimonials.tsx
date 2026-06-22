@@ -1,3 +1,37 @@
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "SNR Digital Marketing",
+  "url": "https://www.snrdigitalmarketing.com",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "47",
+    "bestRating": "5",
+    "worstRating": "1",
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Organization", "name": "City Dental Clinic" },
+      "reviewBody": "Within 2 weeks we started receiving quality patient enquiries every day. The Google Ads campaigns were perfectly targeted.",
+    },
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Organization", "name": "SkyView Real Estate" },
+      "reviewBody": "Our property listings started getting consistent leads through Meta Ads. Best ROI we have seen from any marketing.",
+    },
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Organization", "name": "BrightPath Academy" },
+      "reviewBody": "Student admissions doubled within one admission season. SNR redesigned our website and ran SEO that actually worked.",
+    },
+  ],
+};
+
 const testimonials = [
   {
     business: "City Dental Clinic",
@@ -25,6 +59,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="py-28 px-6 bg-[#0A0F1E]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }} />
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">
