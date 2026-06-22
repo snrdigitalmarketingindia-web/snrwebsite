@@ -1,3 +1,7 @@
+// Set to true once you have real verified reviews on Google / Clutch / GoodFirms
+// and update ratingValue + reviewCount to match your actual numbers
+const ENABLE_AGGREGATE_RATING = false;
+
 const aggregateRatingSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -59,7 +63,9 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="py-28 px-6 bg-[#0A0F1E]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }} />
+      {ENABLE_AGGREGATE_RATING && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }} />
+      )}
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">
