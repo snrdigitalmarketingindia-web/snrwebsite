@@ -82,7 +82,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
           <p>© {new Date().getFullYear()} SNR Digital Marketing. All rights reserved.</p>
-          <p>Your Digital Growth Partner · Hyderabad, India</p>
+          <div className="flex items-center gap-4">
+            <Link href="/about" className="hover:text-slate-400 transition-colors">About</Link>
+            <Link href="/contact" className="hover:text-slate-400 transition-colors">Contact</Link>
+            <Link href="/privacy-policy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
+          </div>
         </div>
       </div>
     </footer>

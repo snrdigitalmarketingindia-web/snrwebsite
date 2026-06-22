@@ -10,8 +10,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const core: MetadataRoute.Sitemap = [
-    { url: BASE, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: BASE,                       lastModified: now, changeFrequency: "weekly",  priority: 1    },
+    { url: `${BASE}/about`,            lastModified: now, changeFrequency: "monthly", priority: 0.9  },
+    { url: `${BASE}/contact`,          lastModified: now, changeFrequency: "monthly", priority: 0.9  },
+    { url: `${BASE}/blog`,             lastModified: now, changeFrequency: "weekly",  priority: 0.8  },
   ];
 
   const services: MetadataRoute.Sitemap = servicePages.map((s) => ({

@@ -34,37 +34,10 @@ export default function SiteNav() {
             Blog
           </Link>
           <Link
-            href="/dashboard"
-            className="text-slate-400 hover:text-white text-sm px-3 py-1.5 rounded-lg hover:bg-white/[0.05] transition-colors flex items-center gap-1.5"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-            Dashboard
-          </Link>
-          <Link
-            href="/campaigns"
-            className="text-slate-400 hover:text-white text-sm px-3 py-1.5 rounded-lg hover:bg-white/[0.05] transition-colors flex items-center gap-1.5"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-            Campaigns
-          </Link>
-          <Link
-            href="/ai-operator"
-            className="text-slate-400 hover:text-white text-sm px-3 py-1.5 rounded-lg hover:bg-blue-500/[0.08] border border-transparent hover:border-blue-500/20 transition-colors flex items-center gap-1.5"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            AI OS
-          </Link>
-          <Link
-            href="/onboarding"
+            href="/about"
             className="text-slate-400 hover:text-white text-sm px-3 py-1.5 rounded-lg hover:bg-white/[0.05] transition-colors"
           >
-            Agencies
-          </Link>
-          <Link
-            href="/super-admin"
-            className="text-slate-400 hover:text-white text-sm px-3 py-1.5 rounded-lg hover:bg-red-500/10 border border-transparent hover:border-red-500/20 transition-colors"
-          >
-            ⚙ Admin
+            About
           </Link>
         </div>
 

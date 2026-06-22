@@ -35,8 +35,8 @@ const REDIRECT_MAP: Record<string, string> = {
   "/index.php":    "/",
   "/home":         "/",
   "/services":     "/seo-services",
-  "/contact":      "/",
-  "/about":        "/",
+  "/contact":      "/contact",
+  "/about":        "/about",
 };
 
 /* ── Strip junk query params from homepage ──────────────────────────────── */
