@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { trackChatOpen, trackChatOption, trackWhatsApp } from "@/lib/analytics";
 
-const WA_URL = "https://wa.me/919989437777?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20online";
+const EMAIL_URL = "mailto:snrdigitalmarketingindia@gmail.com?subject=Business%20Enquiry&body=Hi%20SNR%20Digital%20Marketing%2C%0A%0AI%20want%20to%20grow%20my%20business%20online.%0A%0AName%3A%0ABusiness%3A%0AGoal%3A";
 
 type Option = { label: string; value: string };
 type Message = { from: "bot" | "user"; text: string; options?: Option[] };
@@ -49,47 +49,47 @@ const FLOWS: Record<string, Message> = {
   ind_health: {
     from: "bot",
     text: "For hospitals & clinics, Google Ads + Local SEO is the winning combo.\n\nPatients search for doctors online daily. We can get you daily patient enquiries within 2 weeks. 🏥",
-    options: [{ label: "Talk to Expert on WhatsApp", value: "cta_whatsapp" }],
+    options: [{ label: "Email Our Expert", value: "cta_whatsapp" }],
   },
   ind_realestate: {
     from: "bot",
     text: "For real estate, Meta Ads + Google Ads generates the best leads.\n\nWe create campaigns that bring daily property enquiries via WhatsApp. 🏠",
-    options: [{ label: "Talk to Expert on WhatsApp", value: "cta_whatsapp" }],
+    options: [{ label: "Email Our Expert", value: "cta_whatsapp" }],
   },
   ind_edu: {
     from: "bot",
     text: "For education businesses, SEO + Google Ads drives the best student admissions.\n\nWe help coaching centres, schools and colleges fill seats every semester. 🎓",
-    options: [{ label: "Talk to Expert on WhatsApp", value: "cta_whatsapp" }],
+    options: [{ label: "Email Our Expert", value: "cta_whatsapp" }],
   },
   ind_other: {
     from: "bot",
     text: "We work with all types of businesses across India.\n\nOur growth experts will understand your business and suggest the best strategy — completely free. 🚀",
-    options: [{ label: "Talk to Expert on WhatsApp", value: "cta_whatsapp" }],
+    options: [{ label: "Email Our Expert", value: "cta_whatsapp" }],
   },
   goal_calls: {
     from: "bot",
     text: "For more calls & WhatsApp enquiries, Google Ads + a conversion landing page is the fastest path.\n\nMost clients see daily enquiries within 2 weeks of launch.",
-    options: [{ label: "Talk to Expert on WhatsApp", value: "cta_whatsapp" }],
+    options: [{ label: "Email Our Expert", value: "cta_whatsapp" }],
   },
   goal_traffic: {
     from: "bot",
     text: "For more visitors, SEO is the long-term winner. For instant traffic, Google Ads is fastest.\n\nWe recommend Google Ads now + SEO running in parallel for compounding results.",
-    options: [{ label: "Talk to Expert on WhatsApp", value: "cta_whatsapp" }],
+    options: [{ label: "Email Our Expert", value: "cta_whatsapp" }],
   },
   goal_website: {
     from: "bot",
     text: "We build fast, mobile-first websites designed to convert visitors into customers.\n\nTypical delivery: 1–2 weeks. Every website includes WhatsApp + call lead capture. 🌐",
-    options: [{ label: "Talk to Expert on WhatsApp", value: "cta_whatsapp" }],
+    options: [{ label: "Email Our Expert", value: "cta_whatsapp" }],
   },
   goal_social: {
     from: "bot",
     text: "For social media leads, Meta Ads (Facebook + Instagram) is the best channel.\n\nWe run targeted campaigns that bring WhatsApp enquiries daily for your business.",
-    options: [{ label: "Talk to Expert on WhatsApp", value: "cta_whatsapp" }],
+    options: [{ label: "Email Our Expert", value: "cta_whatsapp" }],
   },
   cta_audit: {
     from: "bot",
     text: "Our free Business Growth Audit includes:\n\n✓ SEO health check\n✓ Competitor analysis\n✓ Top 3 growth opportunities\n✓ Recommended ad strategy\n\nConnect with our expert on WhatsApp 👇",
-    options: [{ label: "Get Free Audit on WhatsApp", value: "cta_whatsapp" }],
+    options: [{ label: "Get Free Audit via Email", value: "cta_whatsapp" }],
   },
 };
 
@@ -117,7 +117,7 @@ export default function AIChatWidget() {
   function handleOption(value: string, label: string) {
     if (value === "cta_whatsapp") {
       trackWhatsApp("chat_widget");
-      window.open(WA_URL, "_blank");
+      window.open(EMAIL_URL, "_blank");
       return;
     }
 
@@ -223,7 +223,7 @@ export default function AIChatWidget() {
                 ↺ Start over
               </button>
               {lastOptions?.some((o) => o.value !== "cta_whatsapp") && (
-                <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+                <a href={EMAIL_URL} target="_blank" rel="noopener noreferrer"
                   className="text-xs text-green-400 hover:text-green-300 font-medium transition-colors">
                   Jump to WhatsApp →
                 </a>

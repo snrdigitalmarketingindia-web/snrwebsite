@@ -174,8 +174,7 @@ export default function LoginPage() {
 
           <p className="text-center text-slate-700 text-xs mt-6">
             Need help?&nbsp;
-            <a href="https://wa.me/919989437777?text=Hi%2C%20I%20need%20help%20with%20my%20dashboard%20login"
-              target="_blank" rel="noopener noreferrer"
+            <a href="mailto:snrdigitalmarketingindia@gmail.com?subject=Dashboard%20Login%20Help"
               className="text-blue-500 hover:text-blue-400 underline">
               Contact SNR Digital Marketing
             </a>
