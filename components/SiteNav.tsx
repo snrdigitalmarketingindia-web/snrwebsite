@@ -15,11 +15,13 @@ export default function SiteNav() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <Link href="/" className="flex-shrink-0" aria-label="SNR Digital Marketing — Home">
           <svg viewBox="0 0 175 56" width="158" height="50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="0" y="2" width="72" height="48" rx="10" fill="#2563EB"/>
-            <text x="36" y="34" textAnchor="middle" fontFamily="system-ui,sans-serif" fontSize="22" fontWeight="800" fill="white" letterSpacing="1">SNR</text>
-            <circle cx="62" cy="10" r="4" fill="#4ADE80"/>
-            <text x="76" y="24" fontFamily="system-ui,sans-serif" fontSize="17" fontWeight="700" fill="#93C5FD">Digital</text>
-            <text x="76" y="46" fontFamily="system-ui,sans-serif" fontSize="17" fontWeight="700" fill="#4ADE80">Marketing</text>
+            <rect x="0" y="2" width="72" height="48" rx="11" fill="#1E3A8A"/>
+            <clipPath id="snr-clip"><rect x="0" y="2" width="72" height="48" rx="11"/></clipPath>
+            <polygon points="42,2 72,2 72,32" fill="#22C55E" clipPath="url(#snr-clip)"/>
+            <text x="62" y="12" textAnchor="middle" dominantBaseline="middle" fontFamily="system-ui,-apple-system,sans-serif" fontSize="14" fontWeight="900" fill="white">↗</text>
+            <text x="36" y="38" textAnchor="middle" fontFamily="system-ui,-apple-system,sans-serif" fontSize="24" fontWeight="800" fill="white" letterSpacing="2">SNR</text>
+            <text x="76" y="21" fontFamily="system-ui,-apple-system,sans-serif" fontSize="17" fontWeight="700" fill="#7DD3FC">Digital</text>
+            <text x="76" y="43" fontFamily="system-ui,-apple-system,sans-serif" fontSize="17" fontWeight="700" fill="#22C55E">Marketing</text>
           </svg>
         </Link>
 
