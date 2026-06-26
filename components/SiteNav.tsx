@@ -13,8 +13,15 @@ export default function SiteNav() {
   return (
     <nav className="sticky top-0 z-40 bg-[#0A0F1E]/95 backdrop-blur border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-        <Link href="/" className="text-white font-bold text-lg tracking-tight flex-shrink-0">
-          SNR <span className="text-blue-400">Digital</span>
+        <Link href="/" className="flex-shrink-0" aria-label="SNR Digital Marketing — Home">
+          <svg viewBox="0 0 220 56" width="176" height="45" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0" y="2" width="72" height="48" rx="10" fill="#2563EB"/>
+            <text x="36" y="34" textAnchor="middle" fontFamily="system-ui,sans-serif" fontSize="22" fontWeight="800" fill="white" letterSpacing="1">SNR</text>
+            <circle cx="62" cy="10" r="4" fill="#4ADE80"/>
+            <line x1="84" y1="8" x2="84" y2="48" stroke="#1E293B" strokeWidth="0.5"/>
+            <text x="96" y="26" fontFamily="system-ui,sans-serif" fontSize="14" fontWeight="700" fill="#93C5FD">Digital</text>
+            <text x="96" y="43" fontFamily="system-ui,sans-serif" fontSize="14" fontWeight="700" fill="#4ADE80">Marketing</text>
+          </svg>
         </Link>
 
         <div className="hidden md:flex items-center gap-1 flex-wrap">
