@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     url: BASE,
     locale: "en_IN",
     type: "website",
-    images: [{ url: `${BASE}/opengraph-image.png`, width: 1200, height: 630, alt: "SNR Digital Marketing" }],
+    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "SNR Digital Marketing" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "SNR Digital Marketing — Get More Customers Online in India",
     description:
       "We help Indian businesses get more customers through SEO, Google Ads, Meta Ads & Websites. Free Business Growth Audit.",
-    images: [`${BASE}/opengraph-image.png`],
+    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,
