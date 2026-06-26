@@ -53,10 +53,32 @@ export default function LocationPageLayout({ page }: { page: LocationPage }) {
     ],
   };
 
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `How to Get ${page.service} in ${page.city}`,
+    "description": `Step-by-step guide to hiring a ${page.service} agency in ${page.city} that delivers measurable results.`,
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Define your goals", "text": "Identify what you want — more leads, brand visibility, or e-commerce sales — so the agency can tailor the right strategy." },
+      { "@type": "HowToStep", "position": 2, "name": "Request a free audit", "text": "Contact SNR Digital Marketing for a no-obligation growth audit to understand your current digital presence and opportunities." },
+      { "@type": "HowToStep", "position": 3, "name": "Review the proposal", "text": "Receive a customised strategy with clear KPIs, timelines, and transparent pricing — no hidden costs." },
+      { "@type": "HowToStep", "position": 4, "name": "Launch and track", "text": "Campaigns go live with weekly performance reports so you always know your ROI." },
+    ],
+  };
+
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": `${BASE}/${page.slug}`,
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "h2"] },
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       {/* Hero */}
       <section className="relative py-24 px-6 bg-[#0A0F1E] overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
