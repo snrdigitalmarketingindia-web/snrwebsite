@@ -17,7 +17,7 @@ const localBusinessSchema = {
     "@type": "PostalAddress",
     "addressLocality": "Hyderabad",
     "addressRegion": "Telangana",
-    "postalCode": "500001",
+    "postalCode": "500079",
     "addressCountry": "IN",
   },
   "geo": {
