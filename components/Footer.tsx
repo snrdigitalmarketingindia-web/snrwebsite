@@ -88,13 +88,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
-          <p>© {new Date().getFullYear()} SNR Digital Marketing. All rights reserved. SNR Digital Marketing is operated by Vonmal Services Inc.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/about" className="hover:text-slate-400 transition-colors">About</Link>
-            <Link href="/contact" className="hover:text-slate-400 transition-colors">Contact</Link>
-            <Link href="/privacy-policy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
+        <div className="border-t border-white/[0.06] pt-6 flex flex-col gap-3 text-xs text-slate-600">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p>© {new Date().getFullYear()} SNR Digital Marketing. All rights reserved.</p>
+            <div className="flex items-center gap-4">
+              <Link href="/about" className="hover:text-slate-400 transition-colors">About</Link>
+              <Link href="/contact" className="hover:text-slate-400 transition-colors">Contact</Link>
+              <Link href="/privacy-policy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
+            </div>
           </div>
+          <p className="text-center sm:text-left">SNR Digital Marketing is operated by Vonmal Services Inc., a Florida corporation.</p>
         </div>
       </div>
     </footer>
