@@ -7,6 +7,7 @@ const services = [
   { label: "Meta Ads",              href: "/meta-ads-management" },
   { label: "PPC Management",        href: "/ppc-management" },
   { label: "Social Media Marketing",href: "/social-media-marketing" },
+  { label: "Social Media Management", href: "/social-media-management" },
   { label: "Website Development",   href: "/website-development" },
   { label: "AI & GEO Optimization", href: "/ai-geo-optimization" },
 ];
@@ -88,7 +89,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
-          <p>© {new Date().getFullYear()} SNR Digital Marketing. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} SNR Digital Marketing. All rights reserved. SNR Digital Marketing is operated by Vonmal Services Inc.</p>
           <div className="flex items-center gap-4">
             <Link href="/about" className="hover:text-slate-400 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-slate-400 transition-colors">Contact</Link>

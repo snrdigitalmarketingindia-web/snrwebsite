@@ -6,6 +6,7 @@ const services = [
   { label: "Meta Ads",               href: "/meta-ads-management" },
   { label: "Website Development",    href: "/website-development" },
   { label: "Mobile App Development", href: "/mobile-app-development" },
+  { label: "Social Media Mgmt",      href: "/social-media-management" },
   { label: "AI & GEO Optimization",  href: "/ai-geo-optimization" },
 ];
 
