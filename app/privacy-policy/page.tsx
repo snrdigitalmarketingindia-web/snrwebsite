@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.snrdigitalmarketing.com/privacy-policy" },
+  alternates: { canonical: "https://www.snrdigitalmarketing.com/privacy-policy/" },
   title: "Privacy Policy | SNR Digital Marketing",
   description: "SNR Digital Marketing privacy policy — how we collect, use and protect your personal data in accordance with India's Digital Personal Data Protection Act 2023.",
   robots: { index: false, follow: false },

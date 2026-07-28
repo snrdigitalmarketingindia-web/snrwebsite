@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "SNR Digital Marketing helps Indian businesses get more customers through SEO, Google Ads, Meta Ads & Websites. Get a Free Business Growth Audit. Based in Hyderabad.",
   alternates: {
-    canonical: BASE,
+    canonical: `${BASE}/`,
   },
   openGraph: {
     title: "SNR Digital Marketing — Get More Customers Online in India",

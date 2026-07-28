@@ -4,7 +4,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.snrdigitalmarketing.com/about" },
+  alternates: { canonical: "https://www.snrdigitalmarketing.com/about/" },
   title: "About SNR Digital Marketing — Hyderabad Digital Marketing Agency",
   description:
     "SNR Digital Marketing is a Hyderabad-based digital marketing agency founded by Srinivas Reddy in 2024. We help Indian businesses grow online through SEO, Google Ads, Meta Ads, and GEO.",
@@ -20,7 +20,7 @@ const founderSchema = {
     "name": "SNR Digital Marketing",
     "url": "https://www.snrdigitalmarketing.com",
   },
-  "url": "https://www.snrdigitalmarketing.com/about",
+  "url": "https://www.snrdigitalmarketing.com/about/",
   "knowsAbout": [
     "SEO", "Google Ads", "Meta Ads", "Generative Engine Optimization",
     "Local SEO", "Website Development", "Digital Marketing Strategy",

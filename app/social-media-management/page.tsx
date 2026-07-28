@@ -5,7 +5,7 @@ import { servicePages } from "@/lib/services-data";
 const page = servicePages.find((s) => s.slug === "social-media-management")!;
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.snrdigitalmarketing.com/social-media-management" },
+  alternates: { canonical: "https://www.snrdigitalmarketing.com/social-media-management/" },
   title: page.metaTitle,
   description: page.metaDescription,
 };

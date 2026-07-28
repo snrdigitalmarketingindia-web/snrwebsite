@@ -10,29 +10,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const core: MetadataRoute.Sitemap = [
-    { url: BASE,                       lastModified: now, changeFrequency: "weekly",  priority: 1    },
-    { url: `${BASE}/about`,            lastModified: now, changeFrequency: "monthly", priority: 0.9  },
-    { url: `${BASE}/contact`,          lastModified: now, changeFrequency: "monthly", priority: 0.9  },
-    { url: `${BASE}/blog`,             lastModified: now, changeFrequency: "weekly",  priority: 0.8  },
-    { url: `${BASE}/case-studies`,     lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/`,                  lastModified: now, changeFrequency: "weekly",  priority: 1    },
+    { url: `${BASE}/about/`,            lastModified: now, changeFrequency: "monthly", priority: 0.9  },
+    { url: `${BASE}/contact/`,          lastModified: now, changeFrequency: "monthly", priority: 0.9  },
+    { url: `${BASE}/blog/`,             lastModified: now, changeFrequency: "weekly",  priority: 0.8  },
+    { url: `${BASE}/case-studies/`,     lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/privacy-policy/`,   lastModified: now, changeFrequency: "yearly",  priority: 0.3  },
   ];
 
   const services: MetadataRoute.Sitemap = servicePages.map((s) => ({
-    url: `${BASE}/${s.slug}`,
+    url: `${BASE}/${s.slug}/`,
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.9,
   }));
 
   const locations: MetadataRoute.Sitemap = locationPages.map((l) => ({
-    url: `${BASE}/${l.slug}`,
+    url: `${BASE}/${l.slug}/`,
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.85,
   }));
 
   const posts: MetadataRoute.Sitemap = blogPosts.map((p) => ({
-    url: `${BASE}/blog/${p.slug}`,
+    url: `${BASE}/blog/${p.slug}/`,
     lastModified: new Date(p.publishedAt),
     changeFrequency: "monthly",
     priority: 0.7,

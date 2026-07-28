@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    alternates: { canonical: `https://www.snrdigitalmarketing.com/blog/${slug}` },
+    alternates: { canonical: `https://www.snrdigitalmarketing.com/blog/${slug}/` },
     title: post.metaTitle,
     description: post.metaDescription,
   };

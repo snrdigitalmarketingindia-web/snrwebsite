@@ -5,7 +5,7 @@ import PageCTA from "@/components/PageCTA";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.snrdigitalmarketing.com/case-studies" },
+  alternates: { canonical: "https://www.snrdigitalmarketing.com/case-studies/" },
   title: "Case Studies — Real Results from Indian Businesses | SNR Digital Marketing",
   description: "See how SNR Digital Marketing helped Indian businesses grow online. Real case studies with measurable results — leads, rankings, and revenue growth.",
 };
@@ -15,7 +15,7 @@ const caseStudySchema = {
   "@type": "CollectionPage",
   "name": "Case Studies — SNR Digital Marketing",
   "description": "Real case studies showing how SNR Digital Marketing helped Indian businesses grow online through SEO, Google Ads, Meta Ads, and website development.",
-  "url": "https://www.snrdigitalmarketing.com/case-studies",
+  "url": "https://www.snrdigitalmarketing.com/case-studies/",
   "publisher": { "@type": "Organization", "name": "SNR Digital Marketing" },
 };
 
