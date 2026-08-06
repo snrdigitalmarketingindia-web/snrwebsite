@@ -49,21 +49,46 @@ export const metadata: Metadata = {
 // ── Global schema.org markup ──────────────────────────────────────────────────
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   "name": "SNR Digital Marketing",
   "url": BASE,
   "logo": `${BASE}/logo.png`,
+  "image": `${BASE}/og-image.png`,
   "email": "snrdigitalmarketingindia@gmail.com",
   "telephone": "+91-9989437777",
+  "priceRange": "₹₹",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Hyderabad",
     "addressRegion": "Telangana",
+    "postalCode": "500079",
     "addressCountry": "IN",
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "17.3850",
+    "longitude": "78.4867",
+  },
+  "hasMap": "https://maps.app.goo.gl/7gU7V1dGZJrefpX4A",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "21:00",
+    },
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Hyderabad" },
+    { "@type": "State", "name": "Telangana" },
+    { "@type": "Country", "name": "India" },
+  ],
+  "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Digital Marketing", "GEO", "Website Development"],
   "sameAs": [
     "https://www.facebook.com/snrdigitalmarketing",
     "https://www.instagram.com/snrdigitalmarketing",
+    "https://www.linkedin.com/company/snr-digital-marketing",
+    "https://maps.app.goo.gl/7gU7V1dGZJrefpX4A",
   ],
 };
 
