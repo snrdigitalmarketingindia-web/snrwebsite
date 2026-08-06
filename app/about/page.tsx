@@ -53,6 +53,15 @@ const breadcrumbSchema = {
   ],
 };
 
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About SNR Digital Marketing",
+  "url": `${BASE}/about/`,
+  "description": "SNR Digital Marketing is a Hyderabad-based digital marketing agency founded by Srinivas Reddy in 2024.",
+  "mainEntity": { "@type": "ProfessionalService", "name": "SNR Digital Marketing", "url": BASE },
+};
+
 const services = [
   { icon: "🔍", title: "SEO Services", desc: "Rank higher on Google and capture organic leads every day." },
   { icon: "📡", title: "GEO / AI SEO", desc: "Get cited by ChatGPT, Gemini, and Perplexity for your industry." },
@@ -72,6 +81,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script
         type="application/ld+json"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import PageCTA from "@/components/PageCTA";
 import Footer from "@/components/Footer";
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) return {};
   const url = `${BASE}/blog/${slug}/`;
   return {
-    title: post.metaTitle,
+    title: { absolute: post.metaTitle },
     description: post.metaDescription,
     alternates: { canonical: url },
     openGraph: {
@@ -65,15 +66,46 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const related = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": BASE },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${BASE}/blog/` },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": `${BASE}/blog/${slug}/` },
+    ],
+  };
+
+  const fullSchema = {
+    ...post.schema,
+    "image": { "@type": "ImageObject", "url": `${BASE}/og-image.png`, "width": 1200, "height": 630 },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `${BASE}/blog/${slug}/` },
+    "description": post.metaDescription,
+    "publisher": {
+      "@type": "ProfessionalService",
+      "name": "SNR Digital Marketing",
+      "url": BASE,
+      "logo": { "@type": "ImageObject", "url": `${BASE}/logo.png`, "width": 180, "height": 60 },
+    },
+  };
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(post.schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(fullSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
       {/* Article header */}
       <article className="py-20 px-6 bg-[#0A0F1E]">
         <div className="max-w-3xl mx-auto">
+          {/* Breadcrumb nav */}
+          <nav className="flex items-center gap-2 text-xs text-slate-500 mb-8" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-slate-300 transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/blog/" className="hover:text-slate-300 transition-colors">Blog</Link>
+            <span>/</span>
+            <span className="text-slate-400 truncate max-w-[200px]">{post.category}</span>
+          </nav>
+
           <div className="flex items-center gap-3 mb-6">
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
               {post.category}
@@ -93,9 +125,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.title}
           </h1>
 
-          <p className="text-slate-400 text-lg leading-relaxed mb-10 pb-10 border-b border-white/[0.07]">
+          <p className="text-slate-400 text-lg leading-relaxed mb-8">
             {post.excerpt}
           </p>
+
+          {/* Author bio */}
+          <div className="flex items-center gap-4 py-5 border-y border-white/[0.07] mb-10">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white font-bold text-lg">
+              S
+            </div>
+            <div>
+              <Link href="/about/" className="text-white font-semibold text-sm hover:text-blue-400 transition-colors">
+                Srinivas Reddy
+              </Link>
+              <p className="text-slate-500 text-xs mt-0.5">
+                Founder, SNR Digital Marketing · Digital marketing strategist helping Indian businesses grow online through SEO, Google Ads, Meta Ads &amp; GEO.
+              </p>
+            </div>
+          </div>
 
           {/* Article body */}
           <div className="prose-snr">

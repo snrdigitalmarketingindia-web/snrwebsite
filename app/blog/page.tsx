@@ -6,13 +6,13 @@ import { blogPosts } from "@/lib/blog-data";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.snrdigitalmarketing.com/blog/" },
-  title: "Digital Marketing Blog — SEO, Google Ads & Growth Tips | SNR Digital Marketing",
+  title: { absolute: "Digital Marketing Blog — SEO, Google Ads & Growth Tips | SNR Digital Marketing" },
   description:
     "Expert insights on SEO, Google Ads, Meta Ads, and digital marketing for Indian businesses. Updated monthly by SNR Digital Marketing, Hyderabad.",
   openGraph: {
     type: "website",
     url: "https://www.snrdigitalmarketing.com/blog/",
-    title: "Digital Marketing Blog — SEO, Google Ads & Growth Tips | SNR Digital Marketing",
+    title: { absolute: "Digital Marketing Blog — SEO, Google Ads & Growth Tips | SNR Digital Marketing" },
     description: "Expert insights on SEO, Google Ads, Meta Ads, and digital marketing for Indian businesses. Updated monthly by SNR Digital Marketing, Hyderabad.",
     siteName: "SNR Digital Marketing",
     images: [{ url: "https://www.snrdigitalmarketing.com/og-image.png", width: 1200, height: 630, alt: "SNR Digital Marketing" }],
@@ -34,6 +34,21 @@ const blogIndexSchema = {
   },
 };
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "SNR Digital Marketing Blog Posts",
+  "url": `${BASE}/blog/`,
+  "itemListElement": [...blogPosts]
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.title,
+      "url": `${BASE}/blog/${p.slug}/`,
+    })),
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -51,6 +66,7 @@ export default function BlogIndex() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogIndexSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="py-24 px-6 bg-[#0A0F1E]">
         <div className="max-w-5xl mx-auto">

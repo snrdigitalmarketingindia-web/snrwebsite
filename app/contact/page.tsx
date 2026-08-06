@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 const BASE = "https://www.snrdigitalmarketing.com";
 
 export const metadata: Metadata = {
-  title: "Contact SNR Digital Marketing | Free Growth Audit — Hyderabad",
+  title: { absolute: "Contact SNR Digital Marketing | Free Growth Audit — Hyderabad" },
   description: "Get in touch with SNR Digital Marketing. Request a free business growth audit, ask about SEO, Google Ads, Meta Ads or Website Development. We reply within 2–4 hours.",
   alternates: {
     canonical: `${BASE}/contact/`,
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: `${BASE}/contact/`,
-    title: "Contact SNR Digital Marketing | Free Growth Audit — Hyderabad",
+    title: { absolute: "Contact SNR Digital Marketing | Free Growth Audit — Hyderabad" },
     description: "Get in touch with SNR Digital Marketing. Request a free business growth audit, ask about SEO, Google Ads, Meta Ads or Website Development. We reply within 2–4 hours.",
     siteName: "SNR Digital Marketing",
     images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "SNR Digital Marketing" }],
