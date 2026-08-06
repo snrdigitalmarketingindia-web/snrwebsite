@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.snrdigitalmarketing.com/case-studies/" },
   title: "Case Studies — Real Results from Indian Businesses | SNR Digital Marketing",
   description: "See how SNR Digital Marketing helped Indian businesses grow online. Real case studies with measurable results — leads, rankings, and revenue growth.",
+  openGraph: {
+    type: "website",
+    url: "https://www.snrdigitalmarketing.com/case-studies/",
+    title: "Case Studies — Real Results from Indian Businesses | SNR Digital Marketing",
+    description: "See how SNR Digital Marketing helped Indian businesses grow online. Real case studies with measurable results — leads, rankings, and revenue growth.",
+    siteName: "SNR Digital Marketing",
+    images: [{ url: "https://www.snrdigitalmarketing.com/og-image.png", width: 1200, height: 630, alt: "SNR Digital Marketing" }],
+  },
 };
 
 const caseStudySchema = {

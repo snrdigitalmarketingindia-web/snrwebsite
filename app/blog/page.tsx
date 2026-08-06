@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: "Digital Marketing Blog — SEO, Google Ads & Growth Tips | SNR Digital Marketing",
   description:
     "Expert insights on SEO, Google Ads, Meta Ads, and digital marketing for Indian businesses. Updated monthly by SNR Digital Marketing, Hyderabad.",
+  openGraph: {
+    type: "website",
+    url: "https://www.snrdigitalmarketing.com/blog/",
+    title: "Digital Marketing Blog — SEO, Google Ads & Growth Tips | SNR Digital Marketing",
+    description: "Expert insights on SEO, Google Ads, Meta Ads, and digital marketing for Indian businesses. Updated monthly by SNR Digital Marketing, Hyderabad.",
+    siteName: "SNR Digital Marketing",
+    images: [{ url: "https://www.snrdigitalmarketing.com/og-image.png", width: 1200, height: 630, alt: "SNR Digital Marketing" }],
+  },
 };
 
 export default function BlogIndex() {

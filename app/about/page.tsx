@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   title: "About SNR Digital Marketing — Hyderabad Digital Marketing Agency",
   description:
     "SNR Digital Marketing is a Hyderabad-based digital marketing agency founded by Srinivas Reddy in 2024. We help Indian businesses grow online through SEO, Google Ads, Meta Ads, and GEO.",
+  openGraph: {
+    type: "website",
+    url: "https://www.snrdigitalmarketing.com/about/",
+    title: "About SNR Digital Marketing — Hyderabad Digital Marketing Agency",
+    description: "SNR Digital Marketing is a Hyderabad-based digital marketing agency founded by Srinivas Reddy in 2024. We help Indian businesses grow online through SEO, Google Ads, Meta Ads, and GEO.",
+    siteName: "SNR Digital Marketing",
+    images: [{ url: "https://www.snrdigitalmarketing.com/og-image.png", width: 1200, height: 630, alt: "SNR Digital Marketing" }],
+  },
 };
 
 const founderSchema = {

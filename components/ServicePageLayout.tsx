@@ -16,16 +16,25 @@ export default function ServicePageLayout({ page }: { page: ServicePage }) {
     ],
   };
 
-  const howToSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": `How ${page.title} Works — SNR Digital Marketing`,
-    "step": page.process.map((p) => ({
-      "@type": "HowToStep",
-      "position": p.step,
-      "name": p.title,
-      "text": p.desc,
-    })),
+    "@type": "Service",
+    "name": page.title,
+    "description": page.metaDescription,
+    "url": `${BASE}/${page.slug}/`,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "SNR Digital Marketing",
+      "url": BASE,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN",
+      },
+    },
+    "areaServed": { "@type": "Country", "name": "India" },
+    "serviceType": page.title,
   };
 
   const speakableSchema = {
@@ -40,7 +49,7 @@ export default function ServicePageLayout({ page }: { page: ServicePage }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(page.schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       {/* Hero */}
       <section className="relative py-24 px-6 bg-[#0A0F1E] overflow-hidden">

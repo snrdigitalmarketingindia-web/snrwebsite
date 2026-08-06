@@ -11,14 +11,25 @@ export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
 }
 
+const BASE = "https://www.snrdigitalmarketing.com";
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
+  const url = `${BASE}/blog/${slug}/`;
   return {
-    alternates: { canonical: `https://www.snrdigitalmarketing.com/blog/${slug}/` },
     title: post.metaTitle,
     description: post.metaDescription,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.metaTitle,
+      description: post.metaDescription,
+      siteName: "SNR Digital Marketing",
+      images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: post.coverAlt }],
+    },
   };
 }
 
@@ -92,6 +103,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </article>
+
+      {/* Related service CTA */}
+      {post.relatedServiceHref && post.relatedServiceLabel && (
+        <section className="py-12 px-6 bg-[#111C35] border-y border-white/[0.06]">
+          <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
+            <p className="text-slate-300 text-base">
+              Interested in this for your business?{" "}
+              <span className="text-white font-semibold">{post.relatedServiceLabel}</span>
+            </p>
+            <a
+              href={post.relatedServiceHref}
+              className="btn-green flex-shrink-0 px-7 py-3 rounded-xl font-semibold text-sm inline-flex items-center gap-2"
+            >
+              Learn More →
+            </a>
+          </div>
+        </section>
+      )}
 
       {post.faqs.length > 0 && (
         <FAQSection faqs={post.faqs} heading="Frequently Asked Questions" />

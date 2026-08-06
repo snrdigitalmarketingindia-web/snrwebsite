@@ -32,11 +32,11 @@ export default function Hero() {
 
         {/* H1 */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.1] tracking-tight text-white mb-5">
-          Your{" "}
+          Hyderabad&apos;s{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-            Digital Growth
+            Digital Marketing
           </span>{" "}
-          Partner
+          Agency
         </h1>
 
         {/* Outcome line */}

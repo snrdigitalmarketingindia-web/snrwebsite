@@ -11,6 +11,8 @@ export type BlogPost = {
   content: BlogSection[];
   faqs: { q: string; a: string }[];
   schema: Record<string, unknown>;
+  relatedServiceLabel?: string;
+  relatedServiceHref?: string;
 };
 
 export type BlogSection = {
@@ -22,18 +24,20 @@ export type BlogSection = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "seo-tips-for-hyderabad-businesses-2025",
-    title: "10 SEO Tips for Hyderabad Businesses to Rank on Page 1 in 2025",
-    metaTitle: "10 SEO Tips for Hyderabad Businesses — Rank on Page 1 in 2025",
+    title: "10 SEO Tips for Hyderabad Businesses to Rank on Page 1 in 2026",
+    metaTitle: "10 SEO Tips for Hyderabad Businesses — Rank on Page 1 in 2026",
     metaDescription:
-      "Practical SEO tips for Hyderabad businesses to rank higher on Google in 2025. Local SEO, Google Business Profile, mobile optimisation and more.",
+      "Practical SEO tips for Hyderabad businesses to rank higher on Google in 2026. Local SEO, Google Business Profile, mobile optimisation and more.",
     publishedAt: "2025-04-15",
     readTime: "8 min read",
     category: "SEO",
     excerpt:
       "Hyderabad's digital competition is intensifying. Here are 10 proven SEO strategies that local businesses can implement right now to outrank competitors and capture more organic leads.",
-    coverAlt: "SEO tips for Hyderabad businesses 2025",
+    coverAlt: "SEO tips for Hyderabad businesses 2026",
+    relatedServiceLabel: "SEO Services for Hyderabad Businesses",
+    relatedServiceHref: "/seo-services-hyderabad/",
     content: [
-      { type: "p", text: "Hyderabad is one of India's fastest-growing business cities — and with that growth comes fierce competition for Google's top positions. Whether you run a clinic in Banjara Hills, a real estate agency in Gachibowli, or a coaching institute in Ameerpet, here are 10 SEO strategies to help you rank on page 1 in 2025." },
+      { type: "p", text: "Hyderabad is one of India's fastest-growing business cities — and with that growth comes fierce competition for Google's top positions. Whether you run a clinic in Banjara Hills, a real estate agency in Gachibowli, or a coaching institute in Ameerpet, here are 10 SEO strategies to help you rank on page 1 in 2026." },
       { type: "h2", text: "1. Optimise Your Google Business Profile Completely" },
       { type: "p", text: "For local businesses in Hyderabad, Google Business Profile (formerly Google My Business) is the most important SEO asset you have. An incomplete or unoptimised profile costs you map pack visibility. Fill in every field, add 20+ photos, collect reviews regularly, and post weekly updates." },
       { type: "h2", text: "2. Target Hyderabad-Specific Keywords" },
@@ -45,7 +49,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "5. Get Reviews on Google and Justdial" },
       { type: "p", text: "Reviews are a critical local SEO signal. Aim for 50+ genuine Google reviews with responses from your team. In Hyderabad, Justdial and Sulekha are also important for local citations and trust signals — especially for service businesses." },
       { type: "h2", text: "6. Create Content That Answers Local Questions" },
-      { type: "p", text: "Write blog posts and FAQ pages that answer questions your Hyderabad customers are asking: 'best [service] in Hyderabad', 'how to choose a [service provider] in Hyderabad', '[service] cost in Hyderabad 2025'. This type of content attracts high-intent local traffic." },
+      { type: "p", text: "Write blog posts and FAQ pages that answer questions your Hyderabad customers are asking: 'best [service] in Hyderabad', 'how to choose a [service provider] in Hyderabad', '[service] cost in Hyderabad 2026'. This type of content attracts high-intent local traffic." },
       { type: "h2", text: "7. Build Local Backlinks from Hyderabad Sources" },
       { type: "p", text: "Links from Hyderabad-based websites, news portals, business directories, and industry associations carry extra weight for local SEO. Get listed on Hyderabad Chamber of Commerce, local news sites, and industry-specific directories." },
       { type: "h2", text: "8. Optimise for Mobile-First Search" },
@@ -53,7 +57,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "9. Add Schema Markup for Local Businesses" },
       { type: "p", text: "LocalBusiness schema markup tells Google exactly who you are, what you do, and where you're located. Add Organization, LocalBusiness, and FAQ schema to your key pages. This helps with rich snippet features and improves your click-through rates from search results." },
       { type: "h2", text: "10. Optimise for AI Overviews (GEO)" },
-      { type: "p", text: "Google's AI Overviews now appear for 40%+ of search queries. Structure your content to answer questions directly, use authoritative data and statistics, and build E-E-A-T signals (Experience, Expertise, Authoritativeness, Trust). Businesses that adapt to AI search early will have a significant advantage in 2025 and beyond." },
+      { type: "p", text: "Google's AI Overviews now appear for 40%+ of search queries. Structure your content to answer questions directly, use authoritative data and statistics, and build E-E-A-T signals (Experience, Expertise, Authoritativeness, Trust). Businesses that adapt to AI search early will have a significant advantage in 2026 and beyond." },
       { type: "p", text: "Implementing these 10 strategies consistently over 6 months will put your Hyderabad business in a strong position to dominate local Google search. If you need help implementing any of these, our SEO team offers a free audit to identify your biggest ranking opportunities." },
     ],
     faqs: [
@@ -64,16 +68,18 @@ export const blogPosts: BlogPost[] = [
     schema: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "10 SEO Tips for Hyderabad Businesses to Rank on Page 1 in 2025",
+      "headline": "10 SEO Tips for Hyderabad Businesses to Rank on Page 1 in 2026",
+      "url": "https://www.snrdigitalmarketing.com/blog/seo-tips-for-hyderabad-businesses-2025/",
       "author": { "@type": "Person", "name": "Srinivas Reddy", "url": "https://www.snrdigitalmarketing.com/about" },
       "publisher": { "@type": "Organization", "name": "SNR Digital Marketing" },
       "datePublished": "2025-04-15",
+      "dateModified": "2026-07-01",
     },
   },
   {
     slug: "google-ads-vs-seo-which-is-better",
-    title: "Google Ads vs SEO: Which is Better for Your Indian Business in 2025?",
-    metaTitle: "Google Ads vs SEO — Which is Better for Indian Businesses in 2025?",
+    title: "Google Ads vs SEO: Which is Better for Your Indian Business in 2026?",
+    metaTitle: "Google Ads vs SEO — Which is Better for Indian Businesses in 2026?",
     metaDescription:
       "Google Ads vs SEO: a comprehensive comparison for Indian businesses. Understand costs, timelines, ROI, and which strategy fits your business goals.",
     publishedAt: "2025-03-20",
@@ -82,6 +88,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Should you invest in Google Ads for immediate leads or SEO for long-term growth? This comprehensive guide helps Indian business owners make the right decision.",
     coverAlt: "Google Ads vs SEO comparison for Indian businesses",
+    relatedServiceLabel: "Google Ads Management",
+    relatedServiceHref: "/google-ads-management/",
     content: [
       { type: "p", text: "Every business owner in India asks this question: 'Should I run Google Ads or focus on SEO?' The honest answer is — it depends on your timeline, budget, and goals. Here's a comprehensive comparison to help you decide." },
       { type: "h2", text: "What is Google Ads?" },
@@ -117,16 +125,18 @@ export const blogPosts: BlogPost[] = [
     schema: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "Google Ads vs SEO: Which is Better for Your Indian Business in 2025?",
+      "headline": "Google Ads vs SEO: Which is Better for Your Indian Business in 2026?",
+      "url": "https://www.snrdigitalmarketing.com/blog/google-ads-vs-seo-which-is-better/",
       "author": { "@type": "Person", "name": "Srinivas Reddy", "url": "https://www.snrdigitalmarketing.com/about" },
       "publisher": { "@type": "Organization", "name": "SNR Digital Marketing" },
       "datePublished": "2025-03-20",
+      "dateModified": "2026-07-01",
     },
   },
   {
     slug: "how-to-generate-leads-for-real-estate-in-india",
-    title: "How to Generate More Real Estate Leads Online in India (2025 Guide)",
-    metaTitle: "Generate Real Estate Leads Online in India — 2025 Complete Guide",
+    title: "How to Generate More Real Estate Leads Online in India (2026 Guide)",
+    metaTitle: "Generate Real Estate Leads Online in India — 2026 Complete Guide",
     metaDescription:
       "Complete guide to digital lead generation for Indian real estate businesses. Facebook Ads, Google Ads, SEO, and WhatsApp marketing strategies that work.",
     publishedAt: "2025-02-28",
@@ -135,6 +145,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Real estate is one of India's most competitive digital marketing verticals. This guide covers the most effective online lead generation strategies for Indian real estate developers and agents.",
     coverAlt: "Real estate lead generation India digital marketing",
+    relatedServiceLabel: "Meta Ads Management for Real Estate",
+    relatedServiceHref: "/meta-ads-management/",
     content: [
       { type: "p", text: "Real estate is one of the most competitive digital marketing verticals in India — and generating quality leads online has never been more important (or more challenging). This guide covers the strategies that are working right now for Indian real estate businesses." },
       { type: "h2", text: "1. Facebook & Instagram Lead Ads (Meta Ads)" },
@@ -167,15 +179,17 @@ export const blogPosts: BlogPost[] = [
     schema: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "How to Generate More Real Estate Leads Online in India (2025 Guide)",
+      "headline": "How to Generate More Real Estate Leads Online in India (2026 Guide)",
+      "url": "https://www.snrdigitalmarketing.com/blog/how-to-generate-leads-for-real-estate-in-india/",
       "author": { "@type": "Person", "name": "Srinivas Reddy", "url": "https://www.snrdigitalmarketing.com/about" },
       "publisher": { "@type": "Organization", "name": "SNR Digital Marketing" },
       "datePublished": "2025-02-28",
+      "dateModified": "2026-07-01",
     },
   },
   {
     slug: "digital-marketing-for-hospitals-clinics-india",
-    title: "Digital Marketing for Hospitals & Clinics in India: A 2025 Guide",
+    title: "Digital Marketing for Hospitals & Clinics in India: A 2026 Guide",
     metaTitle: "Digital Marketing for Hospitals & Clinics India — Get More Patients Online",
     metaDescription:
       "Complete digital marketing guide for hospitals and clinics in India. SEO, Google Ads, Meta Ads, and reputation management strategies to grow patient appointments.",
@@ -185,6 +199,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Patients are searching Google before booking any medical appointment. Here's how hospitals and clinics in India can use digital marketing to grow patient enquiries consistently.",
     coverAlt: "Digital marketing for hospitals and clinics India",
+    relatedServiceLabel: "SEO Services for Healthcare",
+    relatedServiceHref: "/seo-services/",
     content: [
       { type: "p", text: "The patient journey in India has fundamentally shifted. Before booking an appointment, 70%+ of patients now search Google for the doctor's credentials, clinic reviews, specialisation, and location. Healthcare providers who aren't visible online are losing patients to competitors every single day." },
       { type: "h2", text: "1. Google Business Profile — Your Most Important Asset" },
@@ -208,26 +224,30 @@ export const blogPosts: BlogPost[] = [
     schema: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "Digital Marketing for Hospitals & Clinics in India: A 2025 Guide",
+      "headline": "Digital Marketing for Hospitals & Clinics in India: A 2026 Guide",
+      "url": "https://www.snrdigitalmarketing.com/blog/digital-marketing-for-hospitals-clinics-india/",
       "author": { "@type": "Person", "name": "Srinivas Reddy", "url": "https://www.snrdigitalmarketing.com/about" },
       "publisher": { "@type": "Organization", "name": "SNR Digital Marketing" },
       "datePublished": "2025-01-20",
+      "dateModified": "2026-07-01",
     },
   },
   {
     slug: "what-is-geo-generative-engine-optimization",
-    title: "What is GEO (Generative Engine Optimisation)? The Future of SEO in 2025",
+    title: "What is GEO (Generative Engine Optimisation)? The Future of SEO in 2026",
     metaTitle: "What is GEO — Generative Engine Optimisation? The Future of SEO | SNR",
     metaDescription:
-      "Understand Generative Engine Optimisation (GEO) — why it matters for your business, how ChatGPT and Google AI Overviews work, and how to optimise for AI search in 2025.",
+      "Understand Generative Engine Optimisation (GEO) — why it matters for your business, how ChatGPT and Google AI Overviews work, and how to optimise for AI search in 2026.",
     publishedAt: "2025-05-01",
     readTime: "9 min read",
     category: "AI & GEO",
     excerpt:
-      "AI search is reshaping how customers find businesses. ChatGPT, Google AI Overviews, and Gemini are answering questions instead of showing links. Here's what GEO is and why every business needs it in 2025.",
-    coverAlt: "GEO Generative Engine Optimisation AI search 2025",
+      "AI search is reshaping how customers find businesses. ChatGPT, Google AI Overviews, and Gemini are answering questions instead of showing links. Here's what GEO is and why every business needs it in 2026.",
+    coverAlt: "GEO Generative Engine Optimisation AI search 2026",
+    relatedServiceLabel: "AI & GEO Optimization Services",
+    relatedServiceHref: "/ai-geo-optimization/",
     content: [
-      { type: "p", text: "Search is changing faster than at any point in the last 20 years. When someone asks ChatGPT 'what is the best digital marketing agency in Hyderabad?', it doesn't show 10 blue links — it gives a direct answer, citing specific businesses it considers most credible. This is the new reality of search in 2025, and it demands a new strategy: Generative Engine Optimisation (GEO)." },
+      { type: "p", text: "Search is changing faster than at any point in the last 20 years. When someone asks ChatGPT 'what is the best digital marketing agency in Hyderabad?', it doesn't show 10 blue links — it gives a direct answer, citing specific businesses it considers most credible. This is the new reality of search in 2026, and it demands a new strategy: Generative Engine Optimisation (GEO)." },
       { type: "h2", text: "What is Generative Engine Optimisation (GEO)?" },
       { type: "p", text: "GEO is the practice of optimising your digital presence to appear in AI-generated answers from ChatGPT, Google AI Overviews, Google Gemini, Perplexity, and other AI-powered search tools. Just as traditional SEO is about ranking in Google's blue links, GEO is about being cited in AI responses." },
       { type: "h2", text: "Why Does GEO Matter for Your Business?" },
@@ -240,7 +260,7 @@ export const blogPosts: BlogPost[] = [
       ]},
       { type: "h2", text: "How Do AI Models Decide What to Cite?" },
       { type: "p", text: "AI models like ChatGPT and Gemini synthesise information from across the web. They prioritise sources that demonstrate E-E-A-T (Experience, Expertise, Authoritativeness, Trust) — the same signals Google uses for traditional SEO, but amplified. They also prefer structured, question-and-answer style content, and sources that are widely cited and referenced by other authoritative sources." },
-      { type: "h2", text: "Key GEO Strategies for 2025" },
+      { type: "h2", text: "Key GEO Strategies for 2026" },
       { type: "ol", items: [
         "Build comprehensive FAQ and Q&A content that directly answers queries in your industry",
         "Establish strong brand entity signals — consistent NAP (Name, Address, Phone) across all platforms",
@@ -255,17 +275,19 @@ export const blogPosts: BlogPost[] = [
       { type: "p", text: "Start by running an AI visibility audit — ask ChatGPT, Gemini, and Perplexity questions that your customers might ask about your service and city. Note whether your business is mentioned. This baseline tells you exactly how much AI visibility work needs to be done. SNR Digital Marketing offers free AI visibility audits for Indian businesses — the first step to capturing the AI search opportunity." },
     ],
     faqs: [
-      { q: "Does GEO replace SEO?", a: "No — GEO extends and complements traditional SEO. Strong technical SEO, content, and backlinks form the foundation for AI visibility. Businesses should invest in both for complete search presence in 2025 and beyond." },
+      { q: "Does GEO replace SEO?", a: "No — GEO extends and complements traditional SEO. Strong technical SEO, content, and backlinks form the foundation for AI visibility. Businesses should invest in both for complete search presence in 2026 and beyond." },
       { q: "Can small businesses benefit from GEO?", a: "Absolutely. In fact, small businesses in less competitive niches have an advantage — there's less competition for AI citations in specific local markets. A well-executed GEO strategy can put a small Hyderabad clinic or law firm in AI answers before their much larger competitors adapt." },
       { q: "How do I know if ChatGPT mentions my business?", a: "You can test this manually by asking ChatGPT and Gemini relevant questions. SNR Digital Marketing also provides AI visibility audits — a systematic test of 20–30 relevant queries across multiple AI platforms to map your current AI presence." },
     ],
     schema: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "What is GEO (Generative Engine Optimisation)? The Future of SEO in 2025",
+      "headline": "What is GEO (Generative Engine Optimisation)? The Future of SEO in 2026",
+      "url": "https://www.snrdigitalmarketing.com/blog/what-is-geo-generative-engine-optimization/",
       "author": { "@type": "Person", "name": "Srinivas Reddy", "url": "https://www.snrdigitalmarketing.com/about" },
       "publisher": { "@type": "Organization", "name": "SNR Digital Marketing" },
       "datePublished": "2025-05-01",
+      "dateModified": "2026-07-01",
     },
   },
   {
@@ -278,6 +300,8 @@ export const blogPosts: BlogPost[] = [
     category: "GEO",
     excerpt: "AI search is no longer the future — it's the present. ChatGPT, Gemini, and Perplexity answer millions of questions daily, and Indian businesses that appear in those answers are capturing leads before the user ever reaches a search results page. Here's exactly how to get cited.",
     coverAlt: "How to get your Indian business cited by ChatGPT Gemini Perplexity 2026",
+    relatedServiceLabel: "AI & GEO Optimization Services",
+    relatedServiceHref: "/ai-geo-optimization/",
     content: [
       { type: "p", text: "In 2026, a growing share of Indian internet users are asking AI tools — ChatGPT, Gemini, Perplexity, Microsoft Copilot — questions that they previously would have typed into Google. 'Which digital marketing agency in Hyderabad is best?', 'What are the top dental clinics in Banjara Hills?', 'Best coaching institute for JEE in Hyderabad?' — these queries are now landing in AI chat interfaces, not search bars." },
       { type: "p", text: "The businesses that appear in those AI-generated answers are capturing high-intent traffic before it ever reaches a traditional search engine. This is Generative Engine Optimisation (GEO) — the discipline of making your business visible and citable by AI language models. Here is a comprehensive, India-specific guide to getting cited in 2026." },
@@ -309,7 +333,6 @@ export const blogPosts: BlogPost[] = [
         "LocalBusiness or ProfessionalService schema with complete NAP (Name, Address, Phone), opening hours, and service area",
         "Person schema for the founder — links your human expertise to your business authority",
         "FAQPage schema on all FAQ sections — directly feeds AI Overview extraction",
-        "HowTo schema on process pages — eligible for featured snippets and AI process answer extraction",
         "AggregateRating schema with genuine review data — star ratings increase click-through and AI citation likelihood",
         "speakable schema — marks content as suitable for voice assistants and AI audio summaries",
       ]},
@@ -356,9 +379,11 @@ export const blogPosts: BlogPost[] = [
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": "How to Get Your Indian Business Cited by ChatGPT, Gemini & Perplexity in 2026",
+      "url": "https://www.snrdigitalmarketing.com/blog/get-cited-by-chatgpt-gemini-perplexity-2026/",
       "author": { "@type": "Person", "name": "Srinivas Reddy", "url": "https://www.snrdigitalmarketing.com/about" },
       "publisher": { "@type": "Organization", "name": "SNR Digital Marketing" },
       "datePublished": "2026-06-22",
+      "dateModified": "2026-07-01",
       "keywords": "GEO, generative engine optimization, ChatGPT SEO, Gemini SEO, AI search India, AI citation, Perplexity SEO",
     },
   },

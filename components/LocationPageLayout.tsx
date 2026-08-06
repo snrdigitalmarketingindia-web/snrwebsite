@@ -53,17 +53,25 @@ export default function LocationPageLayout({ page }: { page: LocationPage }) {
     ],
   };
 
-  const howToSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": `How to Get ${page.service} in ${page.city}`,
-    "description": `Step-by-step guide to hiring a ${page.service} agency in ${page.city} that delivers measurable results.`,
-    "step": [
-      { "@type": "HowToStep", "position": 1, "name": "Define your goals", "text": "Identify what you want — more leads, brand visibility, or e-commerce sales — so the agency can tailor the right strategy." },
-      { "@type": "HowToStep", "position": 2, "name": "Request a free audit", "text": "Contact SNR Digital Marketing for a no-obligation growth audit to understand your current digital presence and opportunities." },
-      { "@type": "HowToStep", "position": 3, "name": "Review the proposal", "text": "Receive a customised strategy with clear KPIs, timelines, and transparent pricing — no hidden costs." },
-      { "@type": "HowToStep", "position": 4, "name": "Launch and track", "text": "Campaigns go live with weekly performance reports so you always know your ROI." },
-    ],
+    "@type": "Service",
+    "name": `${page.service} in ${page.city}`,
+    "description": page.metaDescription,
+    "url": `${BASE}/${page.slug}/`,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "SNR Digital Marketing",
+      "url": BASE,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN",
+      },
+    },
+    "areaServed": { "@type": "City", "name": page.city },
+    "serviceType": page.service,
   };
 
   const speakableSchema = {
@@ -77,7 +85,7 @@ export default function LocationPageLayout({ page }: { page: LocationPage }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       {/* Hero */}
       <section className="relative py-24 px-6 bg-[#0A0F1E] overflow-hidden">
