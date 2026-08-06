@@ -19,6 +19,30 @@ export const metadata: Metadata = {
   },
 };
 
+const BASE = "https://www.snrdigitalmarketing.com";
+
+const blogIndexSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "SNR Digital Marketing Blog",
+  "description": "Expert insights on SEO, Google Ads, Meta Ads, and digital marketing for Indian businesses.",
+  "url": `${BASE}/blog/`,
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "SNR Digital Marketing",
+    "url": BASE,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": BASE },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${BASE}/blog/` },
+  ],
+};
+
 export default function BlogIndex() {
   const sorted = [...blogPosts].sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
@@ -26,6 +50,8 @@ export default function BlogIndex() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogIndexSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="py-24 px-6 bg-[#0A0F1E]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">

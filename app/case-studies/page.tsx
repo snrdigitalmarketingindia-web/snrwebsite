@@ -18,13 +18,24 @@ export const metadata: Metadata = {
   },
 };
 
+const BASE = "https://www.snrdigitalmarketing.com";
+
 const caseStudySchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Case Studies — SNR Digital Marketing",
   "description": "Real case studies showing how SNR Digital Marketing helped Indian businesses grow online through SEO, Google Ads, Meta Ads, and website development.",
-  "url": "https://www.snrdigitalmarketing.com/case-studies/",
-  "publisher": { "@type": "Organization", "name": "SNR Digital Marketing" },
+  "url": `${BASE}/case-studies/`,
+  "publisher": { "@type": "ProfessionalService", "name": "SNR Digital Marketing", "url": BASE },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": BASE },
+    { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": `${BASE}/case-studies/` },
+  ],
 };
 
 const cases = [
@@ -91,6 +102,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}
       <section className="relative py-24 px-6 bg-[#0A0F1E] overflow-hidden">

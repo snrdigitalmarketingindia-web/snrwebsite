@@ -18,20 +18,38 @@ export const metadata: Metadata = {
   },
 };
 
+const BASE = "https://www.snrdigitalmarketing.com";
+
 const founderSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Srinivas Reddy",
   "jobTitle": "Founder & Digital Marketing Strategist",
+  "description": "Srinivas Reddy is the founder of SNR Digital Marketing, a Hyderabad-based digital marketing agency helping Indian businesses grow online through SEO, Google Ads, Meta Ads, and GEO.",
   "worksFor": {
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     "name": "SNR Digital Marketing",
-    "url": "https://www.snrdigitalmarketing.com",
+    "url": BASE,
   },
-  "url": "https://www.snrdigitalmarketing.com/about/",
+  "url": `${BASE}/about/`,
   "knowsAbout": [
     "SEO", "Google Ads", "Meta Ads", "Generative Engine Optimization",
     "Local SEO", "Website Development", "Digital Marketing Strategy",
+    "AI Search Optimization", "Indian Digital Marketing",
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/snr-digital-marketing",
+    "https://www.facebook.com/snrdigitalmarketing",
+    "https://www.instagram.com/snrdigitalmarketing",
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": BASE },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": `${BASE}/about/` },
   ],
 };
 
@@ -54,6 +72,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }}
