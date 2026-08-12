@@ -1,0 +1,27 @@
+User-Agent: *
+Allow: /
+Disallow: /admin
+Disallow: /super-admin
+Disallow: /dashboard
+Disallow: /campaigns
+Disallow: /ai-operator
+Disallow: /onboarding
+Disallow: /login
+Disallow: /signup
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Amazonbot
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.snrdigitalmarketing.com/sitemap.xml
