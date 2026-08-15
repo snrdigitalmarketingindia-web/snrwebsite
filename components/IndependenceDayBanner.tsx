@@ -4,6 +4,12 @@ import { useState } from "react";
 export default function IndependenceDayBanner() {
   const [visible, setVisible] = useState(true);
 
+  // Auto-hide after Aug 16 ends (IST = UTC+5:30)
+  const now = new Date();
+  const istOffset = 5.5 * 60 * 60 * 1000;
+  const ist = new Date(now.getTime() + istOffset);
+  if (ist.getUTCFullYear() > 2026 || ist.getUTCMonth() > 7 || ist.getUTCDate() > 16) return null;
+
   if (!visible) return null;
 
   return (
