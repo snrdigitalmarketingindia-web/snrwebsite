@@ -31,7 +31,7 @@ export default function IndependenceDayBanner() {
         <p className="text-white text-xs sm:text-sm font-medium leading-snug">
           <span className="text-[#FF9933] font-bold">Jai Hind!</span>{" "}
           Wishing every Indian entrepreneur a{" "}
-          <span className="text-white font-semibold">Happy 79th Independence Day</span>
+          <span className="text-white font-semibold">Happy 80th Independence Day</span>
           {" "}— may your business grow as free, bold &amp; unstoppable as our nation.{" "}
           <span className="text-[#138808] font-semibold">🚀 Vande Mataram!</span>
         </p>
