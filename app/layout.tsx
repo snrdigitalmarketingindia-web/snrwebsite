@@ -4,6 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "@/components/AuthProvider";
 import { TenantProvider } from "@/components/TenantProvider";
 import SiteNav from "@/components/SiteNav";
+import IndependenceDayBanner from "@/components/IndependenceDayBanner";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -121,6 +122,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        <IndependenceDayBanner />
         <AuthProvider>
           <TenantProvider>
             <SiteNav />
