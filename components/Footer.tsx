@@ -97,7 +97,7 @@ export default function Footer() {
               <Link href="/privacy-policy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
             </div>
           </div>
-          <p className="text-center sm:text-left">SNR Digital Marketing is operated by Vonmal Services Inc., a Florida corporation.</p>
+          <p className="text-center sm:text-left">SNR Digital Marketing is operated by Vonmal Inc., a Florida corporation — Document No. P24000063727.</p>
         </div>
       </div>
     </footer>
