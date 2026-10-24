@@ -17,11 +17,11 @@ const BASE = "https://www.snrdigitalmarketing.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: {
-    default: "SNR Digital Marketing — Get More Customers Online in India",
+    default: "SNR Digital Marketing — #1 Digital Agency in Hyderabad | SEO, Google Ads, Meta Ads",
     template: "%s | SNR Digital Marketing",
   },
   description:
-    "SNR Digital Marketing helps Indian businesses get more customers through SEO, Google Ads, Meta Ads & Websites. Get a Free Business Growth Audit. Based in Hyderabad.",
+    "50+ Indian businesses trust SNR Digital Marketing for SEO, Google Ads & Meta Ads that generate daily enquiries. Free Business Growth Audit — get more customers in 30 days. Hyderabad.",
   alternates: {
     canonical: `${BASE}/`,
   },

@@ -443,8 +443,8 @@ export const servicePages: ServicePage[] = [
   {
     slug: "local-seo-services",
     title: "Local SEO Services",
-    metaTitle: "Local SEO Services India — Rank #1 in Google Maps & Local Search | SNR Digital",
-    metaDescription: "Expert local SEO services for Indian businesses. We get you ranked in Google Maps, local pack, and 'near me' searches across Hyderabad, Bangalore, Mumbai, Delhi. Free audit.",
+    metaTitle: "Local SEO & Local Search Marketing Services India — Google Maps #1 | SNR Digital",
+    metaDescription: "Top local SEO & local search marketing for Indian businesses. We rank you in Google Maps 3-Pack & 'near me' searches in Hyderabad, Bangalore, Mumbai, Delhi. Free local audit.",
     hero: {
       badge: "Local SEO",
       heading: "Dominate Google Maps & Local Search in Your City",
@@ -597,26 +597,28 @@ export const locationPages: LocationPage[] = [
     slug: "google-ads-agency-hyderabad",
     city: "Hyderabad",
     service: "Google Ads",
-    metaTitle: "Google Ads Agency in Hyderabad — Get Leads in 24 Hours | SNR Digital",
+    metaTitle: "Google Ads Agency in Hyderabad — Leads in 24 Hrs | SNR Digital Marketing",
     metaDescription:
-      "Expert Google Ads agency in Hyderabad. We run high-ROI Google Search, Display & YouTube campaigns for Hyderabad businesses. Free campaign audit. Call now.",
+      "Top Google Ads agency in Hyderabad. 50+ Hyderabad businesses trust us for Google Search, Shopping & YouTube Ads that generate daily enquiries. Free campaign audit — no obligation.",
     hero: {
-      heading: "Google Ads Agency in Hyderabad — Leads in 24 Hours",
+      heading: "Google Ads Agency in Hyderabad — Get Enquiries Within 24 Hours",
       subheading:
         "We manage results-driven Google Ads campaigns for Hyderabad businesses — generating daily leads at the lowest possible cost per enquiry.",
     },
     intro:
-      "Looking for a Google Ads agency in Hyderabad that actually delivers results? SNR Digital Marketing specialises in Google Ads management for Hyderabad businesses — from hospitals and real estate developers to educational institutes and e-commerce stores. We've helped Hyderabad businesses generate thousands of qualified leads through expert campaign management.",
+      "Looking for a Google Ads agency in Hyderabad that actually delivers results? SNR Digital Marketing is a specialist Google Ads agency serving Hyderabad businesses — from hospitals, real estate developers, and coaching institutes to retail stores and e-commerce brands across Banjara Hills, Gachibowli, HITECH City, Secunderabad and Kukatpally. We've helped Hyderabad businesses generate thousands of qualified leads through expert Google Ads campaign management with transparent monthly reporting.",
     whyUs: [
-      { title: "Google Certified Partners", desc: "Our team is certified in Google Ads — ensuring your campaigns are managed to the highest professional standards." },
-      { title: "Hyderabad Industry Expertise", desc: "We know which keywords, bidding strategies, and ad formats work for Hyderabad's specific industries and customer behaviour." },
-      { title: "No Long-Term Lock-In", desc: "Month-to-month contracts. We earn your business through results, not contracts." },
-      { title: "Lowest Cost Per Lead", desc: "Our optimisation process consistently reduces cost per lead by 30–50% compared to self-managed campaigns." },
+      { title: "Google Certified Specialists", desc: "Our team holds active Google Ads certifications — your campaigns are managed to the highest professional standards with proven bid strategies." },
+      { title: "Hyderabad Industry Expertise", desc: "We know which keywords, bidding strategies, and ad formats work for Hyderabad's specific industries and customer search behaviour." },
+      { title: "No Long-Term Lock-In", desc: "Month-to-month contracts. We earn your business through results, not contracts. Cancel any time with 30 days' notice." },
+      { title: "Lowest Cost Per Lead Guarantee", desc: "Our continuous optimisation process — negative keywords, Quality Score improvement, ad copy A/B testing — consistently reduces cost per lead by 30–50%." },
     ],
     faqs: [
-      { q: "What is the minimum ad budget for Google Ads in Hyderabad?", a: "We recommend a minimum ad spend of ₹15,000/month for Hyderabad campaigns. This is separate from our management fee starting at ₹8,000/month." },
-      { q: "Do you specialise in any industries for Google Ads in Hyderabad?", a: "Yes — we have deep expertise in Google Ads for hospitals, real estate agencies, coaching institutes, and e-commerce stores in Hyderabad." },
-      { q: "How soon can my Google Ads campaign go live?", a: "We can have your campaign live within 48–72 hours of starting the onboarding process." },
+      { q: "What is the minimum Google Ads budget for Hyderabad?", a: "We recommend a minimum ad spend of ₹15,000/month for Hyderabad Google Ads campaigns. This is your media budget paid directly to Google, separate from our management fee (starting ₹8,000/month)." },
+      { q: "Which industries do you specialise in for Google Ads in Hyderabad?", a: "We have deep campaign experience in Google Ads for hospitals and clinics, real estate agencies, coaching institutes, chartered accountants, interior designers, and e-commerce stores in Hyderabad." },
+      { q: "How quickly can a Google Ads campaign go live in Hyderabad?", a: "We can have your first campaign live within 48–72 hours of completing the onboarding process — keyword research, ad copy approval, and landing page review included." },
+      { q: "Can Google Ads work for a small business in Hyderabad?", a: "Absolutely. Many of our best-performing accounts are small local businesses — a dental clinic in Banjara Hills, a coaching centre in HITECH City, a real estate agent in Gachibowli. Google Ads works for any business where people search for your service online." },
+      { q: "How is SNR Digital different from other Google Ads agencies in Hyderabad?", a: "We are specialists in lead generation — not brand awareness. Every rupee is tracked to an enquiry. You get weekly reports showing cost per lead, not just impressions. We work on month-to-month terms because we are confident in our results." },
     ],
   },
   {
