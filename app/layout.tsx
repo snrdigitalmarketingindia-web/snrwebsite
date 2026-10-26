@@ -99,11 +99,6 @@ const websiteSchema = {
   "@type": "WebSite",
   "name": "SNR Digital Marketing",
   "url": BASE,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${BASE}/blog/?q={search_term_string}`,
-    "query-input": "required name=search_term_string",
-  },
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
